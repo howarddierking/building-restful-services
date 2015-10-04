@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.ssh.insert_key = false
+  config.vm.box = "hashicorp/precise64"
+
+  # network setup
+  config.vm.network "forwarded_port", guest: 7474, host: 7474
+
+  # provision
+  # config.vm.provision "shell", path: "provision.sh"
+  config.vm.provision "shell", inline: <<-SHELL
+    wget -O - https://debian.neo4j.org/neotechnology.gpg.key | apt-key add -                # Import our signing key
+    echo 'deb http://debian.neo4j.org/repo stable/' > /etc/apt/sources.list.d/neo4j.list    # Create an Apt sources.list file
+    aptitude update -y > /dev/null 2>&1                                                     # Find out about the files in our repository
+    aptitude install neo4j -y                                                               # Install Neo4j, community edition
+
+    # copy over neo4j config files
+    cp /vagrant/neo4j-server.properties /etc/neo4j/neo4j-server.properties
+
+    service neo4j-service restart
+  SHELL
+end
