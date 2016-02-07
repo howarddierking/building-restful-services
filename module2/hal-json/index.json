@@ -1,0 +1,9 @@
+{
+  "_links": {
+    "self": { "href": "/index.json" },
+    "bugs": [
+      { "href": "http://localhost:8000/bugs/123.json" },
+      { "href": "http://localhost:8000/bugs/456.json" }
+    ]
+  }
+}

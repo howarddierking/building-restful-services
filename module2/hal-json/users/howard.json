@@ -1,0 +1,10 @@
+{
+  "_links": {
+    "self": { "href": "/users/howard.json" },
+    "assignments": [
+      { "href": "http://locahost:8000/bugs/123.json" }
+    ]
+  },
+  "username": "howard",
+  "email": "howard@demo.org"  
+}
