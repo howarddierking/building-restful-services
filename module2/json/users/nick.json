@@ -1,6 +1,6 @@
 {
-  "username": "jessica",
-  "email": "jessica@demo.org",
+  "username": "nick",
+  "email": "nick@demo.org",
   "watching": [
     "http://locahost:8000/bugs/123.json",
     "http://locahost:8000/bugs/456.json"
