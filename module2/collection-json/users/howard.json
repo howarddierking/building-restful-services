@@ -1,0 +1,16 @@
+{
+  "collection": {
+    "version": "1.0",
+    "href": "http://localhost:8000/users/howard.json",
+    "items": [{
+      "href": "http://localhost:8000/users/howard.json",
+      "data": [
+        { "name": "username", "value": "howard" }
+        { "name": "email", "value": "howard@demo.org" }
+      ],
+      "links": [
+        { "href": "http://locahost:8000/bugs/123.json", "rel": "assignment" }
+      ]
+    }]
+  }
+}
