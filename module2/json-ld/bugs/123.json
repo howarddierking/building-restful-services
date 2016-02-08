@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "title": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#name",
+    "description": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#description",
+    "assigned-to": {
+      "@id": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#hasAssignee",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "watched-by": {
+      "@id": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#hasCcPerson",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "title": "bug 123",
+  "description": "this is an example of a bug",
+  "assigned-to": [
+    "http://localhost:8000/users/howard.json",
+    "http://localhost:8000/users/jessica.json"
+  ],
+  "watched-by": [
+    "http://localhost:8000/users/nick.json"
+  ]
+}
