@@ -1,0 +1,10 @@
+{
+  "collection": {
+    "version": "1.0",
+    "href": "http://localhost:8000/index.json",
+    "links": [
+      { "href": "http://localhost:8000/bugs/123.json", "rel": "bug" }
+      { "href": "http://localhost:8000/bugs/456.json", "rel": "bug" }
+    ]
+  }
+}

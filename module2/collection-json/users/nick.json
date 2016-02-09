@@ -1,0 +1,17 @@
+{
+  "collection": {
+    "version": "1.0",
+    "href": "http://localhost:8000/users/nick.json",
+    "items": [{
+      "href": "http://localhost:8000/users/nick.json",
+      "data": [
+        { "name": "username", "value": "nick" }
+        { "name": "email", "value": "nick@demo.org" }
+      ],
+      "links": [
+        { "href": "http://locahost:8000/bugs/123.json", "rel": "watching" }
+        { "href": "http://locahost:8000/bugs/456.json", "rel": "watching" }
+      ]
+    }]
+  }
+}

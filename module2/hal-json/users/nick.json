@@ -1,0 +1,11 @@
+{
+  "_links": {
+    "self": { "href": "/users/nick.json" },
+    "watching": [
+      { "href": "http://locahost:8000/bugs/123.json" },
+      { "href": "http://locahost:8000/bugs/456.json" }
+    ]
+  },
+  "username": "nick",
+  "email": "nick@demo.org"
+}
