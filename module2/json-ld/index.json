@@ -1,6 +1,6 @@
 {
   "bugs": [
-    "http://localhost:8000/bugs/123.json",
-    "http://localhost:8000/bugs/456.json"
+    "http://localhost:8000/json-ld/bugs/123.json",
+    "http://localhost:8000/json-ld/bugs/456.json"
   ]
 }
