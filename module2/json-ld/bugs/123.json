@@ -1,25 +1,29 @@
 {
   "@context": {
-    "title": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#name",
-    "description": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#description",
+    "@base": "http://localhost:8000",
+    "b": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#",
+    "sioc": "http://rdfs.org/sioc/ns#",
+    "title": "b:name",
+    "description": "b:description",
     "assigned-to": {
-      "@id": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#hasAssignee",
+      "@id": "b:hasAssignee",
       "@container": "@set",
-      "@type": "@id"
+      "@type": "sioc:User"
     },
     "watched-by": {
-      "@id": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#hasCcPerson",
+      "@id": "b:hasCcPerson",
       "@container": "@set",
-      "@type": "@id"
+      "@type": "sioc:User"
     }
   },
+  "@id": "/bugs/123.json",
   "title": "bug 123",
   "description": "this is an example of a bug",
   "assigned-to": [
-    "http://localhost:8000/users/howard.json",
-    "http://localhost:8000/users/jessica.json"
+    {"@id": "/users/howard.json"},
+    {"@id": "/users/jessica.json"}
   ],
   "watched-by": [
-    "http://localhost:8000/users/nick.json"
+    {"@id": "/users/nick.json"}
   ]
 }

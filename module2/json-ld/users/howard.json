@@ -1,4 +1,7 @@
 {
+  "@context": {
+    
+  },
   "username": "howard",
   "email": "howard@demo.org",
   "assignments": [
