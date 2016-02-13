@@ -1,28 +1,23 @@
 {
   "@context": {
     "@base": "http://localhost:8000",
-    "b": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#",
-    "sioc": "http://rdfs.org/sioc/ns#",
-    "title": "b:name",
-    "description": "b:description",
-    "assigned-to": {
-      "@id": "b:hasAssignee",
-      "@container": "@set",
-      "@type": "sioc:User"
-    },
-    "watched-by": {
-      "@id": "b:hasCcPerson",
-      "@container": "@set",
-      "@type": "sioc:User"
-    }
+    "@vocab": "http://localhost:8000/vocab#"
   },
   "@id": "/bugs/456",
+  "@type": "Bug",
   "title": "bug 456",
   "description": "this is another example of a bug",
   "assigned-to": [
-    {"@id": "/users/jessica.json"}
+    {
+      "@id": "/users/jessica.json",
+      "@type": "User"
+    }
   ],
   "watched-by": [
-    {"@id": "/users/nick.json"}
+    {
+      "@id": "/users/nick.json",
+      "@type": "User"
+    }
   ]
 }
+
