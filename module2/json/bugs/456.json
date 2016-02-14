@@ -2,9 +2,9 @@
   "title": "bug 456",
   "description": "this is another example of a bug",
   "assigned-to": [
-    "http://localhost:8000/users/jessica.json"
+    "http://192.168.33.10/json/users/jessica.json"
   ],
   "watched-by": [
-    "http://localhost:8000/users/nick.json"
+    "http://192.168.33.10/json/users/nick.json"
   ]
 }
