@@ -1,11 +1,11 @@
 {
   "_links": {
-    "self": { "href": "/bugs/456.json" },
+    "self": { "href": "http://192.168.33.10/hal-json/bugs/456.json" },
     "assigned-to": [
-      { "href": "http://localhost:8000/users/jessica.json" }
+      { "href": "http://192.168.33.10/hal-json/users/jessica.json" }
     ],
     "watched-by": [
-      { "href": "http://localhost:8000/users/nick.json" }
+      { "href": "http://192.168.33.10/hal-json/users/nick.json" }
     ]
   },
   "title": "bug 456",

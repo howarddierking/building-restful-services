@@ -1,16 +1,16 @@
 {
   "collection": {
     "version": "1.0",
-    "href": "http://localhost:8000/users/nick.json",
+    "href": "http://192.168.33.10/collection-json/users/nick.json",
     "items": [{
-      "href": "http://localhost:8000/users/nick.json",
+      "href": "http://192.168.33.10/collection-json/users/nick.json",
       "data": [
         { "name": "username", "value": "nick" }
         { "name": "email", "value": "nick@demo.org" }
       ],
       "links": [
-        { "href": "http://locahost:8000/bugs/123.json", "rel": "watching" }
-        { "href": "http://locahost:8000/bugs/456.json", "rel": "watching" }
+        { "href": "http://192.168.33.10/collection-json/bugs/123.json", "rel": "watching" }
+        { "href": "http://192.168.33.10/collection-json/bugs/456.json", "rel": "watching" }
       ]
     }]
   }

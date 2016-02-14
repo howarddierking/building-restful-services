@@ -1,8 +1,8 @@
 {
   "_links": {
-    "self": { "href": "/users/howard.json" },
+    "self": { "href": "http://192.168.33.10/hal-json/users/howard.json" },
     "assignments": [
-      { "href": "http://locahost:8000/bugs/123.json" }
+      { "href": "http://192.168.33.10/hal-json/bugs/123.json" }
     ]
   },
   "username": "howard",

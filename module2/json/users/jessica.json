@@ -2,7 +2,7 @@
   "username": "jessica",
   "email": "jessica@demo.org",
   "assignments": [
-    "http://locahost:8000/bugs/123.json",
-    "http://locahost:8000/bugs/456.json"
+    "http://192.168.33.10/json/bugs/123.json",
+    "http://192.168.33.10/json/bugs/456.json"
   ]
 }
