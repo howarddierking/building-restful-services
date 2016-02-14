@@ -1,25 +1,26 @@
 {
   "@context": {
-    "title": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#name",
-    "description": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#description",
-    "assigned-to": {
-      "@id": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#hasAssignee",
-      "@container": "@set",
-      "@type": "@id"
-    },
-    "watched-by": {
-      "@id": "http://baetle.googlecode.com/svn/evoont/trunk/bom/bom.owl#hasCcPerson",
-      "@container": "@set",
-      "@type": "@id"
-    }
+    "@base": "http://localhost:8000",
+    "@vocab": "http://localhost:8000/vocab#"
   },
+  "@id": "/bugs/123.json",
+  "@type": "Bug",
   "title": "bug 123",
   "description": "this is an example of a bug",
   "assigned-to": [
-    "http://localhost:8000/users/howard.json",
-    "http://localhost:8000/users/jessica.json"
+    {
+      "@id": "/users/howard.json",
+      "@type": "User"
+    },
+    {
+      "@id": "/users/jessica.json",
+      "@type": "User"
+    }
   ],
   "watched-by": [
-    "http://localhost:8000/users/nick.json"
+    {
+      "@id": "/users/nick.json",
+      "@type": "User"
+    }
   ]
 }

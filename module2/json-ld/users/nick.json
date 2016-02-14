@@ -1,8 +1,20 @@
 {
+  "@context": {
+    "@base": "http://localhost:8000",
+    "@vocab": "http://localhost:8000/vocab#"
+  },
+  "@id": "/users/nick.json",
+  "@type": "User",
   "username": "nick",
   "email": "nick@demo.org",
   "watching": [
-    "http://locahost:8000/bugs/123.json",
-    "http://locahost:8000/bugs/456.json"
+    {
+      "@id": "/bugs/123.json",
+      "@type": "Bug"
+    },
+    {
+      "@id": "/bugs/456.json",
+      "@type": "Bug"
+    }
   ]
 }

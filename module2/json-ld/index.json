@@ -1,6 +1,17 @@
 {
+  "@context": {
+    "@base": "http://localhost:8000",
+    "@vocab": "http://localhost:8000/vocab#"
+  },
+  "@id": "/index.json",
   "bugs": [
-    "http://localhost:8000/bugs/123.json",
-    "http://localhost:8000/bugs/456.json"
+    {
+      "@id": "http://localhost:8000/bugs/123.json", 
+      "@type": "Bug"
+    },
+    {
+      "@id": "http://localhost:8000/bugs/456.json", 
+      "@type": "Bug"
+    }
   ]
 }
