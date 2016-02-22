@@ -1,15 +1,15 @@
 {
   "collection": {
     "version": "1.0",
-    "href": "http://192.168.33.10/collection-json/users/howard.json",
+    "href": "http://m2.build-rest.net/collection-json/users/howard.json",
     "items": [{
-      "href": "http://192.168.33.10/collection-json/users/howard.json",
+      "href": "http://m2.build-rest.net/collection-json/users/howard.json",
       "data": [
         { "name": "username", "value": "howard" }
         { "name": "email", "value": "howard@demo.org" }
       ],
       "links": [
-        { "href": "http://192.168.33.10/collection-json/bugs/123.json", "rel": "assignment" }
+        { "href": "http://m2.build-rest.net/collection-json/bugs/123.json", "rel": "assignment" }
       ]
     }]
   }

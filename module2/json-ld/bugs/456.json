@@ -1,7 +1,7 @@
 {
   "@context": {
-    "@base": "http://192.168.33.10/json-ld",
-    "@vocab": "http://192.168.33.10/vocab#"
+    "@base": "http://m2.build-rest.net/json-ld",
+    "@vocab": "http://m2.build-rest.net/vocab#"
   },
   "@id": "/bugs/456",
   "@type": "Bug",

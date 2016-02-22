@@ -1,8 +1,8 @@
 {
   "_links": {
-    "self": { "href": "http://192.168.33.10/hal-json/users/howard.json" },
+    "self": { "href": "http://m2.build-rest.net/hal-json/users/howard.json" },
     "assignments": [
-      { "href": "http://192.168.33.10/hal-json/bugs/123.json" }
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" }
     ]
   },
   "username": "howard",

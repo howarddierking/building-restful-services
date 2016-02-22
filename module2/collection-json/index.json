@@ -1,10 +1,10 @@
 {
   "collection": {
     "version": "1.0",
-    "href": "http://192.168.33.10/collection-json/index.json",
+    "href": "http://m2.build-rest.net/collection-json/index.json",
     "links": [
-      { "href": "http://192.168.33.10/collection-json/bugs/123.json", "rel": "bug" }
-      { "href": "http://192.168.33.10/collection-json/bugs/456.json", "rel": "bug" }
+      { "href": "http://m2.build-rest.net/collection-json/bugs/123.json", "rel": "bug" }
+      { "href": "http://m2.build-rest.net/collection-json/bugs/456.json", "rel": "bug" }
     ]
   }
 }

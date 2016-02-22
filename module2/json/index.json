@@ -1,6 +1,6 @@
 {
   "bugs": [
-    "http://192.168.33.10/json/bugs/123.json",
-    "http://192.168.33.10/json/bugs/456.json"
+    "http://m2.build-rest.net/json/bugs/123.json",
+    "http://m2.build-rest.net/json/bugs/456.json"
   ]
 }

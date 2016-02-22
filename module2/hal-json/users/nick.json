@@ -1,9 +1,9 @@
 {
   "_links": {
-    "self": { "href": "http://192.168.33.10/hal-json/users/nick.json" },
+    "self": { "href": "http://m2.build-rest.net/hal-json/users/nick.json" },
     "watching": [
-      { "href": "http://192.168.33.10/hal-json/bugs/123.json" },
-      { "href": "http://192.168.33.10/hal-json/bugs/456.json" }
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
+      { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" }
     ]
   },
   "username": "nick",

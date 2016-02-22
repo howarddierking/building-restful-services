@@ -2,9 +2,9 @@
   "title": "bug 456",
   "description": "this is another example of a bug",
   "assigned-to": [
-    "http://192.168.33.10/json/users/jessica.json"
+    "http://m2.build-rest.net/json/users/jessica.json"
   ],
   "watched-by": [
-    "http://192.168.33.10/json/users/nick.json"
+    "http://m2.build-rest.net/json/users/nick.json"
   ]
 }
