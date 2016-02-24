@@ -1,16 +1,16 @@
 {
   "collection": {
     "version": "1.0",
-    "href": "http://localhost:8000/bugs/456.json",
+    "href": "http://m2.build-rest.net/collection-json/bugs/456.json",
     "items": [{
-      "href": "http://localhost:8000/bugs/456.json",
+      "href": "http://m2.build-rest.net/collection-json/bugs/456.json",
       "data": [
         { "name": "title", "value": "bug 456" }
         { "name": "description", "value": "this is another example of a bug" }
       ],
       "links": [
-        { "href": "http://localhost:8000/users/jessica.json", "rel": "assigned-to" }
-        { "href": "http://localhost:8000/users/nick.json", "rel": "watched-by" }
+        { "href": "http://m2.build-rest.net/collection-json/users/jessica.json", "rel": "assigned-to" }
+        { "href": "http://m2.build-rest.net/collection-json/users/nick.json", "rel": "watched-by" }
       ]
     }]
   }

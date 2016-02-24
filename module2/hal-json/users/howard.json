@@ -1,8 +1,8 @@
 {
   "_links": {
-    "self": { "href": "/users/howard.json" },
+    "self": { "href": "http://m2.build-rest.net/hal-json/users/howard.json" },
     "assignments": [
-      { "href": "http://locahost:8000/bugs/123.json" }
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" }
     ]
   },
   "username": "howard",

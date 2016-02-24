@@ -2,10 +2,10 @@
   "title": "bug 123",
   "description": "this is an example of a bug",
   "assigned-to": [
-    "http://localhost:8000/users/howard.json",
-    "http://localhost:8000/users/jessica.json"
+    "http://m2.build-rest.net/json/users/howard.json",
+    "http://m2.build-rest.net/json/users/jessica.json"
   ],
   "watched-by": [
-    "http://localhost:8000/users/nick.json"
+    "http://m2.build-rest.net/json/users/nick.json"
   ]
 }

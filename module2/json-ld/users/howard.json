@@ -1,7 +1,16 @@
 {
+  "@context": {
+    "@base": "http://m2.build-rest.net/json-ld",
+    "@vocab": "http://m2.build-rest.net/vocab#"
+  },
+  "@id": "/users/howard.json",
+  "@type": "User",
   "username": "howard",
   "email": "howard@demo.org",
   "assignments": [
-    "http://locahost:8000/bugs/123.json"
-    ]
+    {
+      "@id": "/bugs/123.json",
+      "@type": "Bug"
+    }
+  ]
 }

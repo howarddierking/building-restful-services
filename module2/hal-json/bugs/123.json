@@ -1,12 +1,12 @@
 {
   "_links": {
-    "self": { "href": "/bugs/123.json" },
+    "self": { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
     "assigned-to": [
-      { "href": "http://localhost:8000/users/howard.json" },
-      { "href": "http://localhost:8000/users/jessica.json" }
+      { "href": "http://m2.build-rest.net/hal-json/users/howard.json" },
+      { "href": "http://m2.build-rest.net/hal-json/users/jessica.json" }
     ],
     "watched-by": [
-      {"href": "http://localhost:8000/users/nick.json" }
+      {"href": "http://m2.build-rest.net/hal-json/users/nick.json" }
     ]
   },
   "title": "bug 123",

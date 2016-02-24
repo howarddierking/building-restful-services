@@ -1,10 +1,23 @@
 {
+  "@context": {
+    "@base": "http://m2.build-rest.net/json-ld",
+    "@vocab": "http://m2.build-rest.net/vocab#"
+  },
+  "@id": "/bugs/456",
+  "@type": "Bug",
   "title": "bug 456",
   "description": "this is another example of a bug",
   "assigned-to": [
-    "http://localhost:8000/users/jessica.json"
+    {
+      "@id": "/users/jessica.json",
+      "@type": "User"
+    }
   ],
   "watched-by": [
-    "http://localhost:8000/users/nick.json"
+    {
+      "@id": "/users/nick.json",
+      "@type": "User"
+    }
   ]
 }
+

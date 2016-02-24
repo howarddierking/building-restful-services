@@ -2,7 +2,7 @@
   "username": "nick",
   "email": "nick@demo.org",
   "watching": [
-    "http://locahost:8000/bugs/123.json",
-    "http://locahost:8000/bugs/456.json"
+    "http://m2.build-rest.net/json/bugs/123.json",
+    "http://m2.build-rest.net/json/bugs/456.json"
   ]
 }

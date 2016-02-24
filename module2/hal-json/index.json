@@ -1,9 +1,9 @@
 {
   "_links": {
-    "self": { "href": "/index.json" },
+    "self": { "href": "http://m2.build-rest.net/hal-json/index.json" },
     "bugs": [
-      { "href": "http://localhost:8000/bugs/123.json" },
-      { "href": "http://localhost:8000/bugs/456.json" }
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
+      { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" }
     ]
   }
 }

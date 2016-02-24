@@ -1,9 +1,9 @@
 {
   "_links": {
-    "self": { "href": "/users/jessica.json" },
+    "self": { "href": "http://m2.build-rest.net/hal-json/users/jessica.json" },
     "assignments": [
-      { "href": "http://locahost:8000/bugs/123.json" },
-      { "href": "http://locahost:8000/bugs/456.json" }
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
+      { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" }
     ]
   },
   "username": "jessica",
