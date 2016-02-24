@@ -1,10 +1,10 @@
 {
   "title": "bug 456",
   "description": "this is another example of a bug",
-  "assigned-to": [
+  "assignedTo": [
     "http://m2.build-rest.net/json/users/jessica.json"
   ],
-  "watched-by": [
+  "watchedBy": [
     "http://m2.build-rest.net/json/users/nick.json"
   ]
 }

@@ -1,11 +1,11 @@
 {
   "_links": {
     "self": { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
-    "assigned-to": [
+    "assignedTo": [
       { "href": "http://m2.build-rest.net/hal-json/users/howard.json" },
       { "href": "http://m2.build-rest.net/hal-json/users/jessica.json" }
     ],
-    "watched-by": [
+    "watchedBy": [
       {"href": "http://m2.build-rest.net/hal-json/users/nick.json" }
     ]
   },
