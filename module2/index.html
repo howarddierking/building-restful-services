@@ -3,22 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Building Restful Services</title>
-    <!-- Custom CSS -- >
-    <link rel="stylesheet" href="./client/css/main.css" media="screen" charset="utf-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Custom CSS -- >
+    <link rel="stylesheet" href="./client/css/main.css" type="text/css" charset="utf-8">
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" charset="utf-8"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="./client/js/main.js" charset="utf-8"></script>
+
+    <style media="screen">
+      .row {
+        min-height: 700px;
+      }
+
+      .bug-colomn {
+        min-height: inherit;
+        background-color: #F5F5F5;
+      }
+
+      .list-group {
+        margin-top: 20px;
+      }
+
+      li {
+        margin-top: 20px;
+        border-radius: 4px;
+
+      }
+
+    </style>
+
   </head>
   <body>
     <div class="container">
-      <h1>Bugs</h1>
+      <h1>Dashboard</h1>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 bug-colomn">
+          <h2><small>Bugs</small></h2>
           <ul class="bugs-ul list-group">
             <!-- List Bugs here with jQuery -->
           </ul>

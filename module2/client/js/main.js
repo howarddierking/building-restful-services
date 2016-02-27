@@ -19,22 +19,34 @@ $(document).ready(function(){
     });
   }
 
-  function displayBugName(url, child) {
+  function displayBugInfo(url, child) {
     // Get json file
     $.getJSON(url, function(data){
       console.log(data);
       // Target anchor tag
       let bugItem = $('.list-group-item:nth-child(' + child + ')');
       // Display bug title and bug description
-      bugItem.append('<a href="' + url + '">' + data.title + '</a></li>')
+      bugItem.append('<a href="' + url + '">' + data.title + '</a>')
       .append('<p>' + data.description + '</p>');
+
+      let assignedToArray = data.assignedTo;
+
+      assignedToArray.forEach(function(personURL) {
+        $.getJSON(personURL, function(data){
+          bugItem.append('<p>Assigned To: <a href="' + personURL + '">' + data.username + '</a></p>');
+        })
+      });
+
+      let watchedByArray = data.watchedBy;
+
+      watchedByArray.forEach(function(personURL) {
+        $.getJSON(personURL, function(data){
+          bugItem.append('<p>Watched By: <a href="' + personURL + '">' + data.username + '</a></p>');
+        })
+      });
     })
   }
 
-  function getAssignments(url) {
-    // code here
-  };
-
-  listBugs('http://localhost:8000/json-ld/index.json', displayBugName);
+listBugs('http://m2.build-rest.net/json/index.json', displayBugInfo);
 
 });
