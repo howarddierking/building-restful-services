@@ -7,13 +7,13 @@
   "@type": "Bug",
   "title": "bug 456",
   "description": "this is another example of a bug",
-  "assigned-to": [
+  "assignedTo": [
     {
       "@id": "/users/jessica.json",
       "@type": "User"
     }
   ],
-  "watched-by": [
+  "watchedBy": [
     {
       "@id": "/users/nick.json",
       "@type": "User"

@@ -9,8 +9,8 @@
         { "name": "description", "value": "this is another example of a bug" }
       ],
       "links": [
-        { "href": "http://m2.build-rest.net/collection-json/users/jessica.json", "rel": "assigned-to" }
-        { "href": "http://m2.build-rest.net/collection-json/users/nick.json", "rel": "watched-by" }
+        { "href": "http://m2.build-rest.net/collection-json/users/jessica.json", "rel": "assignedTo" }
+        { "href": "http://m2.build-rest.net/collection-json/users/nick.json", "rel": "watchedBy" }
       ]
     }]
   }
