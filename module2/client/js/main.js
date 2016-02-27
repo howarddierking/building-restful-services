@@ -18,61 +18,34 @@ $(document).ready(function(){
     });
   }
 
-  function displayBugName(url, child) {
+  function displayBugInfo(url, child) {
     // Get json file
     $.getJSON(url, function(data){
       let watchedOrAssigned = data;
       // Target anchor tag
       let bugItem = $('.list-group-item:nth-child(' + child + ')');
       // Display bug title and bug description
-      bugItem.append('<a href="' + url + '">' + data.title + '</a></li>')
+      bugItem.append('<a href="' + url + '">' + data.title + '</a>')
       .append('<p>' + data.description + '</p>');
-    })
-  }
 
-  function listAssignments(url, name) {
-    // Get json file
-    $.getJSON(url, function(data){
-      // Save array of bug links to variable
-      let bugsArray = data.bugs;
+      let assignedToArray = data.assignedTo;
 
-      bugsArray.forEach(function(bugUrl){
-        $.getJSON(bugUrl, function(data){
-
-          let usersArray = data['assigned-to'];
-
-          usersArray.forEach(function(userUrl){
-
-            $.getJSON(userUrl, function(data){
-              console.log(data);
-            })
-          })
+      assignedToArray.forEach(function(personURL) {
+        $.getJSON(personURL, function(data){
+          bugItem.append('<p>Assigned To: <a href="' + personURL + '">' + data.username + '</a></p>');
         })
-      })
-    })
-  }
+      });
 
-  function listWatchedBy(url) {
-    // Get json file
-    $.getJSON(url, function(data){
-      // Save array of bug links to variable
-      let bugsArray = data.bugs;
-      bugsArray.forEach(function(bugUrl){
-        $.getJSON(bugUrl, function(data){
-          console.log(data['watched-by']);
+      let watchedByArray = data.watchedBy;
+
+      watchedByArray.forEach(function(personURL) {
+        $.getJSON(personURL, function(data){
+          bugItem.append('<p>Watched By: <a href="' + personURL + '">' + data.username + '</a></p>');
         })
-      })
+      });
     })
   }
 
-listBugs('http://m2.build-rest.net/json/index.json', displayBugName);
-
-listAssignments('http://m2.build-rest.net/json/index.json');
-
-// listWatchedBy('http://m2.build-rest.net/json/index.json');
+listBugs('http://m2.build-rest.net/json/index.json', displayBugInfo);
 
 });
-
-// To-Do:
-// Filter by name. Have a list of names in a side nav bar. On click, dashboard should reload with only bugs assinged to that person
-// Filter by assigned-to. Same as above.
