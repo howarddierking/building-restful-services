@@ -1,18 +1,1 @@
-.row {
-  min-height: 1200px;
-}
 
-.bug-colomn {
-  min-height: inherit;
-  /*background-color: #F5F5F5;*/
-  background-color: blue;
-}
-
-.list-group {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-h1 {
-  color: blue;
-}
