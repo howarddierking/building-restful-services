@@ -8,9 +8,8 @@ host: m2.build-rest.net
 # array of all schemes that your API supports
 schemes:
   - http
-  - https
 # will be prefixed to all paths
-basePath: /json
+basePath: /json-ld
 produces:
   - application/json
 paths:
@@ -61,14 +60,25 @@ definitions:
   IndexResponse: 
     type: object
     properties:
+      '@id':
+        type: string
       bugs:
         type: array
         description: Set of bug URLs
         items:
-          type: string
+          type: object
+          properties: 
+            '@id':
+              type: string
+            '@type':
+              type: string
   UserResponse:
     type: object
     properties: 
+      '@id':
+        type: string
+      '@type':
+        type: string
       username: 
         type: string
       email: 
@@ -76,10 +86,19 @@ definitions:
       assignments:
         type: array
         items:
-          type: string
+          type: object
+          properties: 
+            '@id': 
+              type: string
+            '@type':
+              type: string
   BugResponse:
     type: object
     properties: 
+      '@id': 
+        type: string
+      '@type': 
+        type: string
       title:
         type: string
       description:
@@ -87,8 +106,18 @@ definitions:
       assignedTo:
         type: array
         items:
-          type: string
+          type: object
+          properties:
+            '@id': 
+              type: string
+            '@type':
+              type: string
       watchedBy:
         type: array
         items:
-          type: string
+          type: object
+          properties:
+            '@id':
+              type: string
+            '@type':
+              type: string
