@@ -6,6 +6,7 @@
   "@id": "/bugs/456",
   "@type": "Bug",
   "title": "bug 456",
+  "status": "In Progress",
   "description": "this is another example of a bug",
   "assignedTo": [
     {

@@ -6,6 +6,7 @@
   "@id": "/bugs/123.json",
   "@type": "Bug",
   "title": "bug 123",
+  "status": "Backlog",
   "description": "this is an example of a bug",
   "assignedTo": [
     {

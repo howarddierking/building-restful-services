@@ -5,11 +5,11 @@
     "items": [{
       "href": "http://m2.build-rest.net/collection-json/users/jessica.json",
       "data": [
-        { "name": "username", "value": "jessica" }
+        { "name": "username", "value": "jessica" },
         { "name": "email", "value": "jessica@demo.org" }
       ],
       "links": [
-        { "href": "http://m2.build-rest.net/collection-json/bugs/123.json", "rel": "assignment" }
+        { "href": "http://m2.build-rest.net/collection-json/bugs/123.json", "rel": "assignment" },
         { "href": "http://m2.build-rest.net/collection-json/bugs/456.json", "rel": "assignment" }
       ]
     }]

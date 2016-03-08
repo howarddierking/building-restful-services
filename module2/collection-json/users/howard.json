@@ -5,7 +5,7 @@
     "items": [{
       "href": "http://m2.build-rest.net/collection-json/users/howard.json",
       "data": [
-        { "name": "username", "value": "howard" }
+        { "name": "username", "value": "howard" },
         { "name": "email", "value": "howard@demo.org" }
       ],
       "links": [

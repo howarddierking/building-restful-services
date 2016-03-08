@@ -1,5 +1,6 @@
 {
   "title": "bug 456",
+  "status": "In Progress",
   "description": "this is another example of a bug",
   "assignedTo": [
     "http://m2.build-rest.net/json/users/jessica.json"

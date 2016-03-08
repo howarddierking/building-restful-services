@@ -5,12 +5,13 @@
     "items": [{
       "href": "http://m2.build-rest.net/collection-json/bugs/123.json",
       "data": [
-        { "name": "title", "value": "bug 123" }
-        { "name": "description", "value": "this is an example of a bug" }
+        { "name": "title", "value": "bug 123" },
+        { "name": "description", "value": "this is an example of a bug" },
+        { "name": "status", "value": "Backlog" }
       ],
       "links": [
-        { "href": "http://m2.build-rest.net/collection-json/users/howard.json", "rel": "assignedTo" }
-        { "href": "http://m2.build-rest.net/collection-json/users/jessica.json", "rel": "assignedTo" }
+        { "href": "http://m2.build-rest.net/collection-json/users/howard.json", "rel": "assignedTo" },
+        { "href": "http://m2.build-rest.net/collection-json/users/jessica.json", "rel": "assignedTo" },
         { "href": "http://m2.build-rest.net/collection-json/users/nick.json", "rel": "watchedBy" }
       ]
     }]

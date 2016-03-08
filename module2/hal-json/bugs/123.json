@@ -10,5 +10,6 @@
     ]
   },
   "title": "bug 123",
+  "status": "Backlog",
   "description": "this is an example of a bug"
 }
