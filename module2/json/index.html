@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" charset="utf-8"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.min.js"></script>
     <!-- Custom JS -->
     <script src="./client/js/main.js" charset="utf-8"></script>
 
@@ -45,16 +47,11 @@
   <body>
     <div class="container">
       <h1>RESTbugs</h1>
-      <div class="row">
-        <div class="col-md-3 bug-colomn">
-          <h2><small>Bugs</small></h2>
-          <ul class="bugs-ul list-group">
-            <!-- List Bugs here with jQuery -->
-          </ul>
-          <div class="btn btn-primary">
-            Dashboard Home
-          </div>
-        </div>
+      <div id="pipelines" class="row">
+        <!-- pipelines -->
+      </div>
+      <div class="btn btn-primary">
+        Dashboard Home
       </div>
     </div>
   </body>

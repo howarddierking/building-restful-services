@@ -1,6 +1,9 @@
 {
-  "bugs": [
-    "http://m2.build-rest.net/json/bugs/123.json",
-    "http://m2.build-rest.net/json/bugs/456.json"
+  "backlog": [
+    "http://m2.build-rest.net/json/bugs/123.json"
+  ],
+  "inProgress": [
+    "http://m2.build-rest.net/json/bugs/456.json",
+    "http://m2.build-rest.net/json/bugs/789.json"
   ]
 }
