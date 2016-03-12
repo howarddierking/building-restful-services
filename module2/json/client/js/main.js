@@ -119,17 +119,18 @@ $(document).ready(function() {
   getPipelines(bugsIndex, function(pipelines){
     _.each(pipelines, function(pipeline, key){
       // pipeline markup container head
-      let pipelineMarkup = ['<div class="col-md-3 bug-colomn"><h2><small>', key, '</small></h2><ul class="bugs-ul list-group">'].join("");
+      let pipelineMarkup = ['<div class="col-md-3 bug-colomn"><h2><small>', 
+        key, 
+        '</small></h2><ul class="bugs-ul list-group">'].join("");
 
       // pipeline bugs
       async.map(pipeline, function(bugUrl, callback){
         getBug(bugUrl, function(bug){
           // bug header
-          let bugMarkup = ['<li class="list-group-item"></li>',
+          let bugMarkup = ['<li class="list-group-item">',
             '<h4><a class="bug-title" id="' + bugUrl + '">',
             capitalize(bug.title),
-            '</a></h4>',
-            '<h5>',
+            '</a></h4><h5>',
             capitalize(bug.description),
             '</h5>'].join("");
 
@@ -160,7 +161,8 @@ $(document).ready(function() {
           function(err, results){
             bugMarkup = [bugMarkup,
               results.assignedTo,
-              results.watchedBy].join("");
+              results.watchedBy, 
+              '</li>'].join('');
             callback(null, bugMarkup);
           });
         });
