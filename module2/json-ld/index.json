@@ -6,11 +6,11 @@
   "@id": "/index.json",
   "bugs": [
     {
-      "@id": "/bugs/123.json", 
+      "@id": "/bugs/123.json",
       "@type": "Bug"
     },
     {
-      "@id": "/bugs/456.json", 
+      "@id": "/bugs/456.json",
       "@type": "Bug"
     }
   ]
