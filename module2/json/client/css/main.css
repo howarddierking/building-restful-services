@@ -3,7 +3,7 @@
   min-height: 600px;
 }
 
-.bug-colomn {
+.bug-column {
   min-height: inherit;
   background-color: #F5F5F5;
   border: 1px solid #ddd;
@@ -22,4 +22,5 @@ li {
 
 a {
   cursor: pointer;
+  color: red;
 }
