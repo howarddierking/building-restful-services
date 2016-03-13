@@ -16,33 +16,6 @@
     <!-- Custom JS -->
     <script src="./client/js/main.js" charset="utf-8"></script>
 
-    <style media="screen">
-      .row {
-        min-height: 600px;
-      }
-
-      .bug-colomn {
-        min-height: inherit;
-        background-color: #F5F5F5;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-
-      .list-group {
-        margin-top: 20px;
-        margin-bottom: 50px;
-      }
-
-      li {
-        margin-top: 20px;
-        border-radius: 4px;
-      }
-
-      a {
-        cursor: pointer;
-      }
-    </style>
-
     <script>
     $(document).ready(function() {
       let container = $('#user');
@@ -51,8 +24,6 @@
       displayUserDetail(userUrl, function(err, results){
         container.append(results);
       });
-
-
     });
     </script>
 
