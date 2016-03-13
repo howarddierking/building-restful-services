@@ -1,1 +1,25 @@
 
+.row {
+  min-height: 600px;
+}
+
+.bug-colomn {
+  min-height: inherit;
+  background-color: #F5F5F5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.list-group {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+li {
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+a {
+  cursor: pointer;
+}
