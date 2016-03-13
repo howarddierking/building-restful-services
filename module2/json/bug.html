@@ -15,34 +15,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.min.js"></script>
     <!-- Custom JS -->
     <script src="./client/js/main.js" charset="utf-8"></script>
-    <script>
-    $(document).ready(function() {
-      let container = $('#pipelines');
-
-      getPipelines(bugsIndex, function(pipelines){
-        _.each(pipelines, function(pipeline, key){
-          // pipeline markup container head
-          let pipelineMarkup = [
-            '<div class="col-md-3 bug-colomn"><h2><small>', 
-            key, 
-            '</small></h2><ul class="bugs-ul list-group">'
-          ].join('');
-
-          // pipeline bugs
-          async.map(pipeline, displayBug, function(err, results){
-            // pipeline markup container tail
-            pipelineMarkup = [
-              pipelineMarkup, 
-              _.reduce(results, function(memo, r){ return memo.concat(r) }),
-              '</ul></div>'
-            ].join('');
-
-            container.append(pipelineMarkup); 
-          });      
-        });
-      });
-    });
-    </script>
 
     <style media="screen">
       .row {
@@ -71,12 +43,25 @@
       }
     </style>
 
+    <script>
+    $(document).ready(function() {
+      let container = $('#bug');
+      let bugID = location.hash.slice(1);
+
+      displayBug(bugID, function(err, results){
+        container.append(results);
+      });
+
+
+    });
+    </script>
+
   </head>
   <body>
     <div class="container">
       <h1><a href="./index.html">RESTbugs</a></h1>
-      <div id="pipelines" class="row">
-        <!-- pipelines -->
+      <div id="bug" class="row">
+        <!-- bug -->
       </div>
     </div>
   </body>
