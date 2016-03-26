@@ -21,7 +21,7 @@
         _.each(pipelines, function(pipeline, key){
           // pipeline markup container head
           let pipelineMarkup = [
-            '<div class="col-md-3 bug-colomn"><h2><small>', 
+            '<div class="col-md-3 bug-column"><h2><small>', 
             key, 
             '</small></h2><ul class="bugs-ul list-group">'
           ].join('');
@@ -47,11 +47,12 @@
         min-height: 600px;
       }
 
-      .bug-colomn {
+      .bug-column {
         min-height: inherit;
         background-color: #F5F5F5;
         border: 1px solid #ddd;
         border-radius: 4px;
+        margin-right:10px;
       }
 
       .list-group {
