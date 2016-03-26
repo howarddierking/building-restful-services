@@ -1,0 +1,19 @@
+{
+  "name": "hal-json",
+  "homepage": "https://github.com/howarddierking/building-restful-services",
+  "description": "RESTbugs Web client using HAL JSON",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hyperagent": "^0.4.0"
+  }
+}
