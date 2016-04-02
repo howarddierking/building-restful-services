@@ -1,8 +1,5 @@
 'use strict';
 
-let websiteRoot = 'http://m2.build-rest.net/json';
-let bugsIndex = 'http://m2.build-rest.net/json/index.json';
-
 let getResource = function(url, callback){
   $.getJSON(url, callback)
 };
@@ -34,6 +31,7 @@ let displayUserDetail = function(userUrl, callback){
 };
 
 let displayBug = function(bugUrl, callback){
+  let websiteRoot = 'http://m2.build-rest.net/json';
   getBug(bugUrl, function(bug){
     async.series({
       assignedTo: function(callback){
