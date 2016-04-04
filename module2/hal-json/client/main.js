@@ -1,15 +1,21 @@
 'use strict';
 
-let capitalize = function (string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+let getResource = function(url) {
+  let resource = new Hyperagent.Resource(url);
+  return resource.fetch();
 };
 
-let getResource = function(url) {
-  let api = new Hyperagent.Resource(url);
-  return api.fetch().then(function(root) {
-    return root.links.bugs;
+let getPipelines = function(url){
+  let resource = new Hyperagent.Resource(url);
+  return getResource(url).then(function(root) {
+    return _.pick(root.links, 'backlog', 'inProgress');
   });
 };
+
+let capitalize = function (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 
 let getBugInfo = function(array) {
   let bugUrlArray = [];
@@ -52,10 +58,3 @@ let buildBugDash = function(promiseArray) {
   });
 };
 
-$(document).ready(function() {
-  getResource('http://m2.build-rest.net/hal-json/index.json').then(function(bugs){
-    return getBugInfo(bugs);
-  }).then(function(promiseArray){
-    buildBugDash(promiseArray);
-  });
-});
