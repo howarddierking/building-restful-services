@@ -50,6 +50,16 @@ let renderBug = function(bugLink){
   });
 };
 
+let renderUser = function(userLink){
+  return userLink.fetch()
+  .then(function(userResource){
+    return '<li class="list-group-item">'
+      .concat('<h4>' + userResource.props.username + '</h4>')
+      .concat('<h5>' + userResource.props.email + '</h5>')
+      .concat('</li>')
+  })
+}; 
+
 let renderAssignee = function(assigneeLink){
   return assigneeLink.fetch()
   .then(function(userResource){

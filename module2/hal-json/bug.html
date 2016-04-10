@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>Building Restful Services</title>
-    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- jQuery -->
+    <!-- Javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" charset="utf-8"></script>
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.min.js"></script>
+    
+    <!-- Components required for hyperagent (HAL client) - distributed through Bower -->
+    <script src="bower_components/uri.js/src/URI.js"></script>
+    <script src="bower_components/uri.js/src/URITemplate.js"></script>
+    <script src="bower_components/q/q.js"></script>
+    <script src="bower_components/hyperagent/dist/hyperagent.js"></script>
+    
     <!-- Custom JS -->
-    <script src="./client/main.js" charset="utf-8"></script>
-
+    <script src="./client/main.js" charset="utf-8"></script>   
     <style media="screen">
       .row {
         min-height: 600px;
@@ -40,23 +44,20 @@
         cursor: pointer;
       }
     </style>
-
     <script>
     $(document).ready(function() {
-      let container = $('#user');
-      let userUrl = location.hash.slice(1);
+      let container = $('#bug');
+      let bugID = location.hash.slice(1);
+      let bug = new Hyperagent.Resource(bugID);
 
-      displayUserDetail(userUrl, function(err, results){
-        container.append(results);
-      });
+      renderBug(bug).then(function(m){ container.append(m) });
     });
     </script>
-
   </head>
   <body>
     <div class="container">
       <h1><a href="./index.html">RESTbugs</a></h1>
-      <div id="user" class="row">
+      <div id="bug" class="row">
         <!-- bug -->
       </div>
     </div>
