@@ -20,122 +20,24 @@
     <!-- Custom JS -->
     <script src="./client/main.js" charset="utf-8"></script>
     <script>
-    let capitalize = function (string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
-    };
+    $(document).ready(function() {
+      let bugsIndex = 'http://m2.build-rest.net/hal-json/index.json';
+      let container = $('#pipelines');
+      
 
-    let renderPipeline = function(){
+      let home = new Hyperagent.Resource(bugsIndex);
 
-    };
-
-    let renderBug = function(){
-
-    };
-
-    let renderAssignee = function(assignee){
-      return new Promise(function(resolve, reject){
-        assignee.fetch()
-        .then(function(userResource){
-          let assigneeMarkup = [ '<p>Assigned to: <a href="' ,
-            websiteRoot.concat('/user.html#').concat(encodeURI(assignee.???)),
-            '" class="assigned-to">',
-            capitalize(userResource.username),
-            '</a></p>' ].join('');
-        })
-      });
-
-
-        async.map(bug.assignedTo, 
-          function(userUrl, mapCallback){
-            getUser(userUrl, function(user){
-              mapCallback(null, '<p>Assigned to: <a href="' + websiteRoot.concat('/user.html#').concat(encodeURI(userUrl)) + '" class="assigned-to">' + capitalize(user.username) + '</a></p>');
-            });
-          }, 
-          function(err, results){
-            callback(null, results.join(''));
-          })
-    };
-
-    let renderWatcher = function(){
-
-    };
-
-      $(document).ready(function() {
-        let bugsIndex = 'http://m2.build-rest.net/hal-json/index.json';
-        let container = $('#pipelines');
-        let websiteRoot = 'http://m2.build-rest.net/hal-json/';
-
-        let home = new Hyperagent.Resource(url);
-
-        home.fetch().then(function(homeDoc){
-          getPipelinesMarkup(homeDoc).then(function())
-        });
-
-        let home = new Hyperagent.Resource(url);
-        home.fetch().then(function(homeDoc){
-          let pipelines = _.pick(homeDoc.links, 'backlog', 'inProgress');
-          _.each(pipelines, function(pipeline, key){
-            let pipelineMarkup = [
-              '<div class="col-md-3 bug-column"><h2><small>', 
-              key, 
-              '</small></h2><ul class="bugs-ul list-group">'
-            ].join('');
-
-            _.each(pipeline, function(pipelineBug){
-              pipelineBug.fetch().then(function(pipelineBugDoc){
-                let bugHeader = ['<li class="list-group-item">',
-                  '<h4><a class="bug-title" href="' + websiteRoot.concat('/bug.html#').concat(encodeURI(bugUrl)) + '">',
-                  capitalize(pipelineBugDoc.title),
-                  '</a></h4><h5>',
-                  capitalize(pipelineBugDoc.description),
-                  '</h5>'].join('');
-
-                _.each(pipelineBugDoc.links.assignedTo, function(assigment){
-
-                })
-
-                let bugFooter = '</li>';
-
-                let bugMarkup = [ bugHeader, assignedTo, watchedBy, bugFooter ].join('');
-                pipelineMarkup.concat(bugMarkup);
-              });
-            });
-
-            container.append(pipelineMarkup);
+      home.fetch()
+        .then(function(homeResource){
+          let pipelines = { 'Backlog': homeResource.links.backlog, 
+            'In Progress': homeResource.links.inProgress };
+          
+          Q.all(_.map(pipelines, renderPipeline))
+          .then(function(vals){
+            _.each(vals, function(val){ container.append(val) });
           });
         });
-
-
-
-
-
-
-
-
-
-
-_.each(pipelines, function(pipeline, key){
-          // pipeline markup container head
-          let pipelineMarkup = [
-            '<div class="col-md-3 bug-column"><h2><small>', 
-            key, 
-            '</small></h2><ul class="bugs-ul list-group">'
-          ].join('');
-
-          // pipeline bugs
-          async.map(pipeline, displayBug, function(err, results){
-            // pipeline markup container tail
-            pipelineMarkup = [
-              pipelineMarkup, 
-              _.reduce(results, function(memo, r){ return memo.concat(r) }),
-              '</ul></div>'
-            ].join('');
-
-            container.append(pipelineMarkup); 
-          });      
-        });
-
-
+    });
     </script>
 
     <style media="screen">
