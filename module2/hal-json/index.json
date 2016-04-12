@@ -1,9 +1,12 @@
 {
   "_links": {
     "self": { "href": "http://m2.build-rest.net/hal-json/index.json" },
-    "bugs": [
-      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
-      { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" }
+    "backlog": [
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" }
+    ],
+    "inProgress": [
+    	{ "href": "http://m2.build-rest.net/hal-json/bugs/456.json" },
+    	{ "href": "http://m2.build-rest.net/hal-json/bugs/789.json" }
     ]
   }
 }

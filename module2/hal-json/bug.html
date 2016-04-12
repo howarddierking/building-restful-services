@@ -16,41 +16,18 @@
     <script src="bower_components/q/q.js"></script>
     <script src="bower_components/hyperagent/dist/hyperagent.js"></script>
     
-    
     <!-- Custom JS -->
-    <script src="./client/main.js" charset="utf-8"></script>
-    <script>
-    $(document).ready(function() {
-      let bugsIndex = 'http://m2.build-rest.net/hal-json/index.json';
-      let container = $('#pipelines');
-      
-
-      let home = new Hyperagent.Resource(bugsIndex);
-
-      home.fetch()
-        .then(function(homeResource){
-          let pipelines = { 'Backlog': homeResource.links.backlog, 
-            'In Progress': homeResource.links.inProgress };
-          
-          Q.all(_.map(pipelines, renderPipeline))
-          .then(function(vals){
-            _.each(vals, function(val){ container.append(val) });
-          });
-        });
-    });
-    </script>
-
+    <script src="./client/main.js" charset="utf-8"></script>   
     <style media="screen">
       .row {
         min-height: 600px;
       }
 
-      .bug-column {
+      .bug-colomn {
         min-height: inherit;
         background-color: #F5F5F5;
         border: 1px solid #ddd;
         border-radius: 4px;
-        margin-right:10px;
       }
 
       .list-group {
@@ -67,13 +44,21 @@
         cursor: pointer;
       }
     </style>
-  </head>
+    <script>
+    $(document).ready(function() {
+      let container = $('#bug');
+      let bugID = location.hash.slice(1);
+      let bug = new Hyperagent.Resource(bugID);
 
+      renderBug(bug).then(function(m){ container.append(m) });
+    });
+    </script>
+  </head>
   <body>
     <div class="container">
       <h1><a href="./index.html">RESTbugs</a></h1>
-      <div id="pipelines" class="row">
-        <!-- pipelines -->
+      <div id="bug" class="row">
+        <!-- bug -->
       </div>
     </div>
   </body>
