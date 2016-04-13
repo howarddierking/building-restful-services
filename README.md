@@ -1,4 +1,4 @@
-Welcome to the samples repository for the Pluralsight course, "Building RESTful Services." The samples in this repository correspond to the various samples that are demonstrted throughout the course, and they are organized accordingly by module number. 
+Welcome to the samples repository for the Pluralsight course, "Building RESTful Services." The samples in this repository correspond to the various samples that are demonstrated throughout the course and they are organized accordingly by module number. 
 
 ## Prerequisites
 
