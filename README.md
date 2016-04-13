@@ -8,5 +8,5 @@ Welcome to the samples repository for the Pluralsight course, "Building RESTful 
 
 ## Starting a Sample
 
-* `cd` into the directory that you wish to run
+* `cd` into the module-specific directory that you wish to run
 * Run the command `vagrant up --provider virtualbox`
