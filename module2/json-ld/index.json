@@ -1,16 +1,22 @@
 {
   "@context": {
-    "@base": "http://m2.build-rest.net/json-ld",
+    "@base": "http://m2.build-rest.net",
     "@vocab": "http://m2.build-rest.net/vocab#"
   },
-  "@id": "/index.json",
-  "bugs": [
+  "@id": "/json-ld/index.json",
+  "backlog": [
     {
-      "@id": "/bugs/123.json",
+      "@id": "/json-ld/bugs/123.json",
+      "@type": "Bug"
+    }
+  ], 
+  "inProgress": [
+    {
+      "@id": "/json-ld/bugs/456.json",
       "@type": "Bug"
     },
     {
-      "@id": "/bugs/456.json",
+      "@id": "/json-ld/bugs/789.json",
       "@type": "Bug"
     }
   ]

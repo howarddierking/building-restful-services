@@ -3,16 +3,12 @@
     "@base": "http://m2.build-rest.net",
     "@vocab": "http://m2.build-rest.net/vocab#"
   },
-  "@id": "/json-ld/bugs/123.json",
+  "@id": "/json-ld/bugs/789.json",
   "@type": "Bug",
-  "title": "bug 123",
-  "status": "Backlog",
-  "description": "this is an example of a bug",
+  "title": "bug 789",
+  "status": "In Progress",
+  "description": "this is yet another example of a bug",
   "assignedTo": [
-    {
-      "@id": "/json-ld/users/howard.json",
-      "@type": "User"
-    },
     {
       "@id": "/json-ld/users/jessica.json",
       "@type": "User"
@@ -20,8 +16,9 @@
   ],
   "watchedBy": [
     {
-      "@id": "/json-ld/users/nick.json",
+      "@id": "/json-ld/users/howard.json",
       "@type": "User"
     }
   ]
 }
+
