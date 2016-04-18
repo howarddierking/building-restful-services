@@ -19,6 +19,17 @@
       let container = $('#pipelines');
 
       getPipelines(bugsIndex, function(pipelines){
+        _.map(pipelines, function(pipeline, key){
+          let pipelineMarkup = '<div class="col-md-3 bug-column"><h2><small>'
+            .concat(key)
+            .concat('</small></h2><ul class="bugs-ul list-group">');
+
+          
+        })
+      }
+
+
+      getPipelines(bugsIndex, function(pipelines){
         _.each(pipelines, function(pipeline, key){
           // pipeline markup container head
           let pipelineMarkup = [
