@@ -14,42 +14,14 @@
     <!-- Custom JS -->
     <script src="./client/main.js" charset="utf-8"></script>
     <script>
+
+    let bugsIndex = 'http://m2.build-rest.net/json/index.json';
+    
     $(document).ready(function() {
-      let bugsIndex = 'http://m2.build-rest.net/json/index.json';
       let container = $('#pipelines');
 
       getPipelines(bugsIndex, function(pipelines){
-        _.map(pipelines, function(pipeline, key){
-          let pipelineMarkup = '<div class="col-md-3 bug-column"><h2><small>'
-            .concat(key)
-            .concat('</small></h2><ul class="bugs-ul list-group">');
-
-          
-        })
-      }
-
-
-      getPipelines(bugsIndex, function(pipelines){
-        _.each(pipelines, function(pipeline, key){
-          // pipeline markup container head
-          let pipelineMarkup = [
-            '<div class="col-md-3 bug-column"><h2><small>', 
-            key, 
-            '</small></h2><ul class="bugs-ul list-group">'
-          ].join('');
-
-          // pipeline bugs
-          async.map(pipeline, displayBug, function(err, results){
-            // pipeline markup container tail
-            pipelineMarkup = [
-              pipelineMarkup, 
-              _.reduce(results, function(memo, r){ return memo.concat(r) }),
-              '</ul></div>'
-            ].join('');
-
-            container.append(pipelineMarkup); 
-          });      
-        });
+        container.append(_.map(pipelines, renderPipeline).join(''));
       });
     });
     </script>
