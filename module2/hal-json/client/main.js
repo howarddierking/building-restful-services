@@ -4,36 +4,6 @@ let capitalize = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-// inline index.html functions
-
-let inline = {};
-
-inline.renderBugUser = function(roleStatement, user){
-  return '<p>' + roleStatement + ': '
-    .concat('<a href="' + websiteRoot + '/user.html#') + encodeURI(user.links.self.href) + '" class="' + roleStatement.toLowerCase().replace(' ', '-') + '">'
-    .concat(capitalize(user.props.username) + '</a></p>');
-};
-
-inline.renderBug = function(bug){
-  return '<li class="list-group-item">'
-    .concat('<h4><a class="bug-title" href="' + websiteRoot + '/bug.html#' + encodeURI(bug.links.self.href) + '">')
-    .concat(capitalize(bug.props.title))
-    .concat('</a></h4><h5>')
-    .concat(capitalize(bug.props.description))
-    .concat('</h5>')
-    .concat(_.map(bug.embedded.assignedTo, _.partial(inline.renderBugUser, 'Assigned to')).join(''))
-    .concat(_.map(bug.embedded.watchedBy, _.partial(inline.renderBugUser, 'Watched by')).join(''))
-    .concat('</li>');
-};
-
-inline.renderPipeline = function(pipeline, pipelineName){
-  return '<div class="col-md-3 bug-column"><h2><small>'
-    .concat(pipelineName)
-    .concat('</small></h2><ul class="bugs-ul list-group">')
-    .concat(_.map(pipeline, inline.renderBug).join(''))
-    .concat('</ul></div>');
-};
-
 // original functions
 
 let renderBug = function(bugLink){
@@ -97,3 +67,34 @@ let renderWatcher = function(watcherLink){
       .concat('</a></p>');
   });
 };
+
+// inline index.html functions
+
+let inline = {};
+
+inline.renderBugUser = function(roleStatement, user){
+  return '<p>' + roleStatement + ': '
+    .concat('<a href="' + websiteRoot + '/user.html#') + encodeURI(user.links.self.href) + '" class="' + roleStatement.toLowerCase().replace(' ', '-') + '">'
+    .concat(capitalize(user.props.username) + '</a></p>');
+};
+
+inline.renderBug = function(bug){
+  return '<li class="list-group-item">'
+    .concat('<h4><a class="bug-title" href="' + websiteRoot + '/bug.html#' + encodeURI(bug.links.self.href) + '">')
+    .concat(capitalize(bug.props.title))
+    .concat('</a></h4><h5>')
+    .concat(capitalize(bug.props.description))
+    .concat('</h5>')
+    .concat(_.map(bug.embedded.assignedTo, _.partial(inline.renderBugUser, 'Assigned to')).join(''))
+    .concat(_.map(bug.embedded.watchedBy, _.partial(inline.renderBugUser, 'Watched by')).join(''))
+    .concat('</li>');
+};
+
+inline.renderPipeline = function(pipeline, pipelineName){
+  return '<div class="col-md-3 bug-column"><h2><small>'
+    .concat(pipelineName)
+    .concat('</small></h2><ul class="bugs-ul list-group">')
+    .concat(_.map(pipeline, inline.renderBug).join(''))
+    .concat('</ul></div>');
+};
+

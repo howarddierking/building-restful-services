@@ -21,7 +21,7 @@
       let container = $('#pipelines');
 
       getPipelines(bugsIndex, function(pipelines){
-        container.append(_.map(pipelines, renderPipeline).join(''));
+        container.append(_.map(pipelines, inline.renderPipeline).join(''));
       });
     });
     </script>

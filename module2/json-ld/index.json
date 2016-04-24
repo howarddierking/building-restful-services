@@ -7,17 +7,73 @@
   "backlog": [
     {
       "@id": "/json-ld/bugs/123.json",
-      "@type": "Bug"
+      "@type": "Bug",
+      "title": "bug 123",
+      "status": "Backlog",
+      "description": "this is an example of a bug",
+      "assignedTo": [
+        {
+          "@id": "/json-ld/users/howard.json",
+          "@type": "User",
+          "username": "howard"
+        },
+        {
+          "@id": "/json-ld/users/jessica.json",
+          "@type": "User",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "@id": "/json-ld/users/nick.json",
+          "@type": "User",
+          "username": "nick"
+        }
+      ]
     }
   ], 
   "inProgress": [
     {
       "@id": "/json-ld/bugs/456.json",
-      "@type": "Bug"
+      "@type": "Bug",
+      "title": "bug 456",
+      "status": "In Progress",
+      "description": "this is another example of a bug",
+      "assignedTo": [
+        {
+          "@id": "/json-ld/users/jessica.json",
+          "@type": "User",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "@id": "/json-ld/users/nick.json",
+          "@type": "User",
+          "username": "nick"
+        }
+      ]
     },
     {
       "@id": "/json-ld/bugs/789.json",
-      "@type": "Bug"
+      "@type": "Bug",
+      "title": "bug 789",
+      "status": "In Progress",
+      "description": "this is yet another example of a bug",
+      "assignedTo": [
+        {
+          "@id": "/json-ld/users/jessica.json",
+          "@type": "User",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "@id": "/json-ld/users/howard.json",
+          "@type": "User",
+          "username": "howard"
+        }
+      ]
     }
   ]
 }
