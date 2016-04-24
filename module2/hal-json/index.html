@@ -24,18 +24,14 @@
       let bugsIndex = 'http://m2.build-rest.net/hal-json/index.json';
       let container = $('#pipelines');
       
-
       let home = new Hyperagent.Resource(bugsIndex);
 
       home.fetch()
         .then(function(homeResource){
-          let pipelines = { 'Backlog': homeResource.links.backlog, 
-            'In Progress': homeResource.links.inProgress };
-          
-          Q.all(_.map(pipelines, renderPipeline))
-          .then(function(vals){
-            _.each(vals, function(val){ container.append(val) });
-          });
+          let pipelines = { 'Backlog': homeResource.embedded.backlog, 
+            'In Progress': homeResource.embedded.inProgress };
+
+          container.append(_.map(pipelines, inline.renderPipeline).join(''));
         });
     });
     </script>
