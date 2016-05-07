@@ -1,12 +1,96 @@
 {
   "_links": {
-    "self": { "href": "http://m2.build-rest.net/hal-json/index.json" },
+      "self": { "href": "http://m2.build-rest.net/hal-json/index.json" }
+    },
+  "_embedded": {
     "backlog": [
-      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" }
+      {
+        "_links": {
+          "self": { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" }
+        },
+        "_embedded": {
+          "assignedTo": [
+            {
+              "_links": {
+                "self": {"href": "http://m2.build-rest.net/json/users/howard.json" }
+              },
+              "username": "howard"
+            },
+            {
+              "_links": {
+                "self": {"href": "http://m2.build-rest.net/json/users/jessica.json" }
+              },
+              "username": "jessica"
+
+            }
+          ],
+          "watchedBy": [
+            {
+              "_links": {
+                "self": {"href": "http://m2.build-rest.net/json/users/nick.json" }
+              },
+              "username": "nick"
+            }
+          ]
+        },
+        "title": "bug 123",
+        "status": "Backlog",
+        "description": "this is an example of a bug"
+      }
     ],
     "inProgress": [
-    	{ "href": "http://m2.build-rest.net/hal-json/bugs/456.json" },
-    	{ "href": "http://m2.build-rest.net/hal-json/bugs/789.json" }
+      {
+        "_links": {
+          "self": { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" }
+        },
+        "_embedded": {
+          "assignedTo": [
+            {
+              "_links": {
+                "self": {"href" : "http://m2.build-rest.net/json/users/jessica.json" }
+              },
+              "username": "jessica"
+            }
+          ],
+          "watchedBy": [
+            {
+              "_links": {
+                "self": {"href": "http://m2.build-rest.net/json/users/nick.json" }
+              },
+              "username": "nick"
+            }
+          ]
+        },
+        "title": "bug 456",
+        "status": "In Progress",
+        "description": "this is another example of a bug"
+      },
+      {
+        "_links": {
+          "self": { "href": "http://m2.build-rest.net/hal-json/bugs/789.json" }
+        },
+        "_embedded": {
+          "assignedTo": [
+            {
+              "_links": {
+                "self": { "href": "http://m2.build-rest.net/json/users/jessica.json" }
+              },
+              "username": "jessica"
+            }
+          ],
+          "watchedBy": [
+            {
+              "_links": {
+                "self": { "href": "http://m2.build-rest.net/json/users/howard.json" }
+              },
+              "username": "howard"
+            }
+          ]
+        },
+        "title": "bug 789",
+        "status": "In Progress",
+        "description": "this is yet another example of a bug"
+      }
     ]
   }
 }
