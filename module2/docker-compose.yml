@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+      image: nginx
+      volumes:
+        - /home/core/vagrant/demo.conf:/etc/nginx/nginx.conf:ro
+        - /home/core/vagrant:/website:ro
+      ports:
+        - "80:80"
