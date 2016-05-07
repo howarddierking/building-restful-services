@@ -1,35 +1,34 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+$coreos_update_channel = "beta"
+$coreos_image_version = "1010.3.0"
+$vm_gui = false
+$vm_memory = 1024
+$vm_cpus = 1
+
 Vagrant.configure(2) do |config|
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+    config.ssh.insert_key = false
+  
+    config.vm.box = "coreos-%s" % $coreos_update_channel
+    config.vm.box_version = $coreos_image_version
+    config.vm.box_url = "http://%s.release.core-os.net/amd64-usr/%s/coreos_production_vagrant.json" % [$coreos_update_channel, $coreos_image_version]
 
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.hostname = "m2.build-rest.net"
+    config.ssh.insert_key = false
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: <<-SHELL
-    printf "\tInstalling NGINX\n"
-    sudo apt-get update
-    sudo apt-get install -y nginx
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    config.vm.network "private_network", ip: "192.168.33.10"
+    config.vm.hostname = "m2.build-rest.net"
 
-    printf "\tCopying demo.conf to nginx configuration directory\n"
-    cp /vagrant/demo.conf /etc/nginx/conf.d/
+    config.vm.synced_folder ".", "/home/core/vagrant", id: "core", :nfs => true,  :mount_options   => ['nolock,vers=3,udp']
 
-    printf "\tChanging base NGINX configuration\n"
-    rm /etc/nginx/sites-enabled/default
-    # https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/#
-    sed -i 's/sendfile.*/sendfile off;/' /etc/nginx/nginx.conf
-    
-    printf "\tReloading NGINX\n"
-    nginx -s reload
-  SHELL
+    # expose Docker's TCP port
+    config.vm.network "forwarded_port", guest: 2375, host: 2375, auto_correct: true
 
-  config.hostsupdater.remove_on_suspend = true
+    # provision cloud-config user-data (configures Docker daemon TCP service)
+    config.vm.provision :file, source: "./vagrantfile-user-data", destination: "/tmp/vagrantfile-user-data"
+    config.vm.provision :shell, :inline => "mv /tmp/vagrantfile-user-data /var/lib/coreos-vagrant/", :privileged => true
+
+    config.hostsupdater.remove_on_suspend = true;
 end
