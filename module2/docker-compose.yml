@@ -3,7 +3,7 @@ services:
   web:
       image: nginx
       volumes:
-        - /home/core/vagrant/demo.conf:/etc/nginx/nginx.conf:ro
-        - /home/core/vagrant:/website:ro
+        - ./demo.conf:/etc/nginx/nginx.conf:ro
+        - .:/website:ro
       ports:
         - "80:80"
