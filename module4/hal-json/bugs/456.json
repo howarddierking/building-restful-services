@@ -1,0 +1,14 @@
+{
+  "_links": {
+    "self": { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" },
+    "assignedTo": [
+      { "href": "http://m2.build-rest.net/hal-json/users/jessica.json" }
+    ],
+    "watchedBy": [
+      { "href": "http://m2.build-rest.net/hal-json/users/nick.json" }
+    ]
+  },
+  "title": "bug 456",
+  "status": "In Progress",
+  "description": "this is another example of a bug"
+}

@@ -1,0 +1,10 @@
+{
+  "collection": {
+    "version": "1.0",
+    "href": "http://m2.build-rest.net/collection-json/index.json",
+    "links": [
+      { "href": "http://m2.build-rest.net/collection-json/bugs/123.json", "rel": "bug" },
+      { "href": "http://m2.build-rest.net/collection-json/bugs/456.json", "rel": "bug" }
+    ]
+  }
+}

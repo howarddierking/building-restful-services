@@ -1,0 +1,8 @@
+{
+  "username": "jessica",
+  "email": "jessica@demo.org",
+  "assignments": [
+    "http://m2.build-rest.net/json/bugs/123.json",
+    "http://m2.build-rest.net/json/bugs/456.json"
+  ]
+}

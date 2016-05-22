@@ -1,0 +1,11 @@
+{
+  "_links": {
+    "self": { "href": "http://m2.build-rest.net/hal-json/users/jessica.json" },
+    "assignments": [
+      { "href": "http://m2.build-rest.net/hal-json/bugs/123.json" },
+      { "href": "http://m2.build-rest.net/hal-json/bugs/456.json" }
+    ]
+  },
+  "username": "jessica",
+  "email": "jessica@demo.org"
+}

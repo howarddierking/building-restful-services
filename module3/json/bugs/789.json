@@ -1,0 +1,11 @@
+{
+  "title": "bug 789",
+  "status": "In Progress",
+  "description": "this is yet another example of a bug",
+  "assignedTo": [
+    "http://m2.build-rest.net/json/users/jessica.json"
+  ],
+  "watchedBy": [
+    "http://m2.build-rest.net/json/users/howard.json"
+  ]
+}
