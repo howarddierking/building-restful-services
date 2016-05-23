@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Building Restful Services</title>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./site.css">
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="/bower_components/async/dist/async.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./render.js" charset="utf-8"></script>
+
+    <script>
+    $(document).ready(function() {
+      let bugsIndex = '/resources/index.ld-json';
+      let container = $('#pipelines');
+      getPipelines(bugsIndex, function(pipelines){
+        _.each(pipelines, function(pipeline, key){
+          // pipeline markup container head
+          let pipelineMarkup = [
+            '<div class="col-md-3 bug-column"><h2><small>', 
+            key, 
+            '</small></h2><ul class="bugs-ul list-group">'
+          ].join('');
+          // pipeline bugs
+          async.map(pipeline, displayBug, function(err, results){
+            // pipeline markup container tail
+            pipelineMarkup = [
+              pipelineMarkup, 
+              _.reduce(results, function(memo, r){ return memo.concat(r) }),
+              '</ul></div>'
+            ].join('');
+            container.append(pipelineMarkup); 
+          });      
+        });
+      });
+    });
+    </script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="./index.html">RESTbugs</a></h1>
+      <div id="pipelines" class="row">
+        <!-- pipelines -->
+      </div>
+    </div>
+  </body>
+</html>

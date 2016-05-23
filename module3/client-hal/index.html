@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Building Restful Services</title>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./site.css">
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="/bower_components/async/dist/async.min.js"></script>
+    
+    <!-- Components required for hyperagent (HAL client) - distributed through Bower -->
+    <script src="/bower_components/uri.js/src/URI.js"></script>
+    <script src="/bower_components/uri.js/src/URITemplate.js"></script>
+    <script src="/bower_components/q/q.js"></script>
+    <script src="/bower_components/hyperagent/dist/hyperagent.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="./render.js" charset="utf-8"></script>
+
+    <script>
+    $(document).ready(function() {
+      let bugsIndex = '/resources/index.hal-json';
+      let container = $('#pipelines');
+      
+      let home = new Hyperagent.Resource(bugsIndex);
+      home.fetch()
+        .then(function(homeResource){
+          let pipelines = { 'Backlog': homeResource.links.backlog, 
+            'In Progress': homeResource.links.inProgress };
+          
+          Q.all(_.map(pipelines, renderPipeline))
+          .then(function(vals){
+            _.each(vals, function(val){ container.append(val) });
+          });
+        });
+    });
+    </script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <h1><a href="./index.html">RESTbugs</a></h1>
+      <div id="pipelines" class="row">
+        <!-- pipelines -->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "building-restful-services",
+  "homepage": "https://github.com/howarddierking/building-restful-services",
+  "description": "RESTbugs Web client",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4",
+    "underscore": "^1.8.3",
+    "async": "^1.5.2"
+  }
+}

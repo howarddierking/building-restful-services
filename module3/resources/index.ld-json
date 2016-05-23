@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "@base": "http://localhost",
+    "@vocab": "http://build-rest.net/vocab#"
+  },
+  "@id": "/resources/index.ld-json",
+  "backlog": [
+    {
+      "@id": "/resources/bugs/123.ld-json",
+      "@type": "Bug"
+    }
+  ], 
+  "inProgress": [
+    {
+      "@id": "/resources/bugs/456.ld-json",
+      "@type": "Bug"
+    },
+    {
+      "@id": "/resources/bugs/789.ld-json",
+      "@type": "Bug"
+    }
+  ]
+}

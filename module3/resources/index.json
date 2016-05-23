@@ -1,0 +1,9 @@
+{
+  "backlog": [
+    "/resources/bugs/123.json"
+  ],
+  "inProgress": [
+    "/resources/bugs/456.json",
+    "/resources/bugs/789.json"    
+  ]
+}
