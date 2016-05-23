@@ -1,0 +1,8 @@
+{
+  "username": "jessica",
+  "email": "jessica@demo.org",
+  "assignments": [
+    "/resources/bugs/123.json",
+    "/resources/bugs/456.json"
+  ]
+}

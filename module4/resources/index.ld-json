@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@base": "http://localhost",
+    "@vocab": "http://build-rest.net/vocab#"
+  },
+  "@id": "/resources/index.ld-json",
+  "backlog": [
+    {
+      "@id": "/resources/bugs/123.ld-json",
+      "@type": "Bug",
+      "title": "bug 123",
+      "status": "Backlog",
+      "description": "this is an example of a bug",
+      "assignedTo": [
+        {
+          "@id": "/resources/users/howard.ld-json",
+          "@type": "User",
+          "username": "howard"
+        },
+        {
+          "@id": "/resources/users/jessica.ld-json",
+          "@type": "User",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "@id": "/resources/users/nick.ld-json",
+          "@type": "User",
+          "username": "nick"
+        }
+      ]
+    }
+  ], 
+  "inProgress": [
+    {
+      "@id": "/resources/bugs/456.ld-json",
+      "@type": "Bug",
+      "title": "bug 456",
+      "status": "In Progress",
+      "description": "this is another example of a bug",
+      "assignedTo": [
+        {
+          "@id": "/resources/users/jessica.ld-json",
+          "@type": "User",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "@id": "/resources/users/nick.ld-json",
+          "@type": "User",
+          "username": "nick"
+        }
+      ]
+    },
+    {
+      "@id": "/resources/bugs/789.ld-json",
+      "@type": "Bug",
+      "title": "bug 789",
+      "status": "In Progress",
+      "description": "this is yet another example of a bug",
+      "assignedTo": [
+        {
+          "@id": "/resources/users/jessica.ld-json",
+          "@type": "User",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "@id": "/resources/users/howard.ld-json",
+          "@type": "User",
+          "username": "howard"
+        }
+      ]
+    }
+  ]
+}

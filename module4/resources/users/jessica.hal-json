@@ -1,0 +1,11 @@
+{
+  "_links": {
+    "self": { "href": "/resources/users/jessica.hal-json" },
+    "assignments": [
+      { "href": "/resources/bugs/123.hal-json" },
+      { "href": "/resources/bugs/456.hal-json" }
+    ]
+  },
+  "username": "jessica",
+  "email": "jessica@demo.org"
+}

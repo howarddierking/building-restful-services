@@ -1,0 +1,16 @@
+{
+  "@context": {
+    "@base": "http://localhost",
+    "@vocab": "http://build-rest.net/vocab#"
+  },
+  "@id": "/resources/users/howard.ld-json",
+  "@type": "User",
+  "username": "howard",
+  "email": "howard@demo.org",
+  "assignments": [
+    {
+      "@id": "/resources/bugs/123.ld-json",
+      "@type": "Bug"
+    }
+  ]
+}

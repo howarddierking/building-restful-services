@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@base": "http://localhost",
+    "@vocab": "http://build-rest.net/vocab#"
+  },
+  "@id": "/resources/bugs/789.ld-json",
+  "@type": "Bug",
+  "title": "bug 789",
+  "status": "In Progress",
+  "description": "this is yet another example of a bug",
+  "assignedTo": [
+    {
+      "@id": "/resources/users/jessica.ld-json",
+      "@type": "User"
+    }
+  ],
+  "watchedBy": [
+    {
+      "@id": "/resources/users/howard.ld-json",
+      "@type": "User"
+    }
+  ]
+}
+

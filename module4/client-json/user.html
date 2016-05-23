@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Building Restful Services</title>
+
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./site.css">
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="/bower_components/async/dist/async.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./render.js" charset="utf-8"></script>
+
+    <script>
+    $(document).ready(function() {
+      let container = $('#user');
+      let userUrl = location.hash.slice(1);
+
+      displayUserDetail(userUrl, function(err, results){
+        container.append(results);
+      });
+    });
+    </script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="./index.html">RESTbugs</a></h1>
+      <div id="user" class="row">
+        <!-- bug -->
+      </div>
+    </div>
+  </body>
+</html>
