@@ -25,14 +25,12 @@ let getPipelines = function(url, callback){
 
 let displayUserDetail = function(userUrl, callback){
   getUser(userUrl, function(user){
-    let userHeader = [
-      '<li class="list-group-item">', 
-      '<h4>' + user.username + '</h4>',
-      '<h5>' + user.email + '</h5>'
-    ].join('');
-
-    let userFooter = '</li>';
-    callback(null, [ userHeader, userFooter ].join(''));
+    let val = `<li class="list-group-item">
+  <h4>${user.username}</h4>
+  <h5>${user.email}</h5>
+</li>`;
+   
+    callback(null, val);
   });
 };
 
@@ -43,7 +41,10 @@ let displayBug = function(bugUrl, callback){
         async.map(bug.assignedTo, 
           function(userUrl, mapCallback){
             getUser(extractID(userUrl), function(user){
-              mapCallback(null, '<p>Assigned to: <a href="' + websiteRoot.concat('/user.html#').concat(encodeURI(extractID(userUrl))) + '" class="assigned-to">' + capitalize(user.username) + '</a></p>');
+              mapCallback(null, `<p>Assigned to: 
+                <a href="${websiteRoot}/user.html#${encodeURI(extractID(userUrl))}" class="assigned-to">
+                  ${capitalize(user.username)}
+                </a></p>`);
             });
           }, 
           function(err, results){
@@ -54,7 +55,10 @@ let displayBug = function(bugUrl, callback){
         async.map(bug.watchedBy, 
           function(userUrl, mapCallback){
             getUser(extractID(userUrl), function(user){
-              mapCallback(null, '<p>Watched by: <a class="watched-by" href="' + websiteRoot.concat('/user.html#').concat(encodeURI(extractID(userUrl))) + '">' + capitalize(user.username) + '</a></p>');
+              mapCallback(null, `<p>Watched by: 
+                <a href="${websiteRoot}/user.html#${encodeURI(extractID(userUrl))}" class="watched-by">
+                  ${capitalize(user.username)}
+                </a></p>`);
             });
           }, 
           function(err, results){
@@ -63,16 +67,18 @@ let displayBug = function(bugUrl, callback){
       }
     },
     function(err, results){
-      let bugHeader = ['<li class="list-group-item">',
-        '<h4><a class="bug-title" href="' + websiteRoot.concat('/bug.html#').concat(encodeURI(extractID(bugUrl))) + '">',
-        capitalize(bug.title),
-        '</a></h4><h5>',
-        capitalize(bug.description),
-        '</h5>'].join('');
+      let val = `<li class="list-group-item">
+<h4><a class="bug-title" href="${websiteRoot}/bug.html#${encodeURI(extractID(bugUrl))}">
+  ${capitalize(bug.title)}
+</a></h4>
+<h5>
+  ${capitalize(bug.description)}
+</h5>
+${results.assignedTo}
+${results.watchedBy}
+</li>`;
 
-      let bugFooter = '</li>';
-
-      callback(null, [ bugHeader, results.assignedTo, results.watchedBy, bugFooter ].join(''));
+      callback(null, val);
     });
   });
 };

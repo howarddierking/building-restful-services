@@ -6,17 +6,17 @@ let capitalize = function (string) {
 
 let renderPipeline = function(bugs, name){
   return Q.fcall(function(){
-    return '<div class="col-md-3 bug-column"><h2><small>'
-      .concat(name)
-      .concat('</small></h2><ul class="bugs-ul list-group">')
+    return `<div class="col-md-3 bug-column">
+  <h2><small>${name}</small></h2>
+  <ul class="bugs-ul list-group">`;
   })
   .then(function(m){
     return Q.all(bugs.map(renderBug)).then(function(vals){
-      return m.concat(vals.join(''));
+      return `${m}${vals.join('')}`;
     });
   })
   .then(function(m){
-    return m.concat('</ul></div>');
+    return `${m}</ul></div>`;
   });
 };
 
@@ -25,27 +25,26 @@ let renderBug = function(bugLink){
   .then(function(bugResource){
     
     return Q.fcall(function(){
-      return '<li class="list-group-item">'
-        .concat('<h4><a class="bug-title" href="')
-        .concat(websiteRoot + '/bug.html#' + encodeURI(bugLink.href))
-        .concat('">')
-        .concat(capitalize(bugResource.props.title))
-        .concat('</a></h4><h5>')
-        .concat(capitalize(bugResource.props.description))
-        .concat('</h5>');
+      return `<li class="list-group-item">
+  <h4>
+    <a class="bug-title" href="${websiteRoot}/bug.html#${encodeURI(bugLink.href)}">${capitalize(bugResource.props.title)}</a>
+  </h4>
+  <h5>
+    ${capitalize(bugResource.props.description)}
+  </h5>`;
     })
     .then(function(m){
       return Q.all(bugResource.links.assignedTo.map(renderAssignee)).then(function(vals){
-        return m.concat(vals.join(''));
+        return `${m}${vals.join('')}`;
       });
     })
     .then(function(m){
       return Q.all(bugResource.links.watchedBy.map(renderWatcher)).then(function(vals){
-        return m.concat(vals.join(''));
+        return `${m}${vals.join('')}`;
       });
     })
     .then(function(m){
-      return m.concat('</li>');
+      return `${m}</li>`;
     });
   });
 };
@@ -53,31 +52,29 @@ let renderBug = function(bugLink){
 let renderUser = function(userLink){
   return userLink.fetch()
   .then(function(userResource){
-    return '<li class="list-group-item">'
-      .concat('<h4>' + userResource.props.username + '</h4>')
-      .concat('<h5>' + userResource.props.email + '</h5>')
-      .concat('</li>')
-  })
+    return `<li class="list-group-item">
+  <h4>${userResource.props.username}</h4>
+  <h5>${userResource.props.email}</h5>
+</li>`;
+  });
 }; 
 
 let renderAssignee = function(assigneeLink){
   return assigneeLink.fetch()
   .then(function(userResource){
-    return '<p>Assigned to: <a href="'
-      .concat(websiteRoot + '/user.html#' + encodeURI(assigneeLink.href))
-      .concat('" class="assigned-to">')
-      .concat(capitalize(userResource.props.username))
-      .concat('</a></p>');
+    return `<p>Assigned to: 
+    <a href="${websiteRoot}/user.html#${encodeURI(assigneeLink.href)}" class="assigned-to">
+      ${capitalize(userResource.props.username)}
+    </a></p>`;
   });
 };
 
 let renderWatcher = function(watcherLink){
   return watcherLink.fetch()
   .then(function(userResource){
-    return '<p>Watched by: <a class="watched-by" href="'
-      .concat(websiteRoot + '/user.html#' + encodeURI(watcherLink.href))
-      .concat('">')
-      .concat(capitalize(userResource.props.username))
-      .concat('</a></p>');
+    return `<p>Watched by: 
+    <a href="${websiteRoot}/user.html#${encodeURI(watcherLink.href)}" class="watched-by">
+      ${capitalize(userResource.props.username)}
+    </a></p>`;
   });
 }; 
