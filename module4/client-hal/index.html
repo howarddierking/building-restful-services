@@ -23,10 +23,13 @@
 
     <script>
     $(document).ready(function() {
-      let bugsIndex = '/resources/index.hal-json';
+      let bugsIndex = '/resources/index';
       let container = $('#pipelines');
       
-      let home = new Hyperagent.Resource(bugsIndex);
+      let home = new Hyperagent.Resource({
+        url: bugsIndex,
+        headers: { accept: 'application/hal+json' }
+      });
 
       home.fetch()
         .then(function(homeResource){

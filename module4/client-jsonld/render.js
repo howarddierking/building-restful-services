@@ -11,7 +11,14 @@ let capitalize = function (string) {
 };
 
 let getResource = function(url, callback){
-  $.getJSON(url, callback)
+  $.ajax({
+    url: url,
+    type: 'GET',
+    headers: {
+      accept: 'application/ld+json'
+    },
+    success: callback
+  });
 };
 
 let getPipelines = function(url, callback){
