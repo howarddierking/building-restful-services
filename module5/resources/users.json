@@ -1,0 +1,25 @@
+[
+  {
+    "username": "howard",
+    "email": "howard@demo.org",
+    "assignments": [
+      "/resources/bugs/123.json"
+    ]
+  },
+  {
+    "username": "jessica",
+    "email": "jessica@demo.org",
+    "assignments": [
+      "/resources/bugs/123.json",
+      "/resources/bugs/456.json"
+    ]
+  },
+  {
+    "username": "nick",
+    "email": "nick@demo.org",
+    "watching": [
+      "/resources/bugs/123.json",
+      "/resources/bugs/456.json"
+    ]
+  }
+]

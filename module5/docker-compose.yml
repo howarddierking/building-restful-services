@@ -1,0 +1,28 @@
+version: '2'
+services:
+  db:
+    image: rethinkdb
+    volumes:
+      - .:/data
+    ports:
+      - "80:80"
+      - "8080:8080"
+  dbinit:
+    image: petecoop/rethinkdb-driver
+    depends_on: 
+      - db
+    volumes: 
+      - ./resources:/resources
+    links:
+      - db
+    command: /resources/init.sh
+  api: 
+    build:
+      context: ./api
+    volumes:
+      - ./api/src:/usr/src/app/src
+    links:
+      - db
+    ports:
+      - "3000:3000"
+
