@@ -1,2 +1,4 @@
 .vagrant
 bower_components
+node_modules
+rethinkdb_data
