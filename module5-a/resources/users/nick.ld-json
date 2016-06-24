@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "@base": "http://localhost",
+    "@vocab": "http://build-rest.net/vocab#"
+  },
+  "@id": "/resources/users/nick.ld-json",
+  "@type": "User",
+  "username": "nick",
+  "email": "nick@demo.org",
+  "watching": [
+    {
+      "@id": "/resources/bugs/123.ld-json",
+      "@type": "Bug"
+    },
+    {
+      "@id": "/resources/bugs/456.ld-json",
+      "@type": "Bug"
+    }
+  ]
+}

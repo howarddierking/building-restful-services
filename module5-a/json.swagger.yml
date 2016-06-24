@@ -1,0 +1,147 @@
+swagger: '2.0'
+info:
+  title: RESTbugs
+  description: Sample bug management API
+  version: "1.0.0"
+# the domain of the service
+host: localhost
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /resources
+produces:
+  - application/json
+paths:
+  /index.json:
+    get:
+      summary: API Dashboard
+      description: |
+        The dashboard provides all of the information needed to display a homepage for a user.
+      responses:
+        200:
+          description: An object representing the dashboard resource
+          schema:
+            $ref: '#/definitions/IndexResponse'
+  /users/{userId}.json:
+    get:
+      summary: User
+      description: |
+        The user represents a person who can be assigned to work on a bug, or who may just have an 
+        interest in tracking a bug
+      parameters:
+        - name: userId
+          in: path
+          description: User identifier
+          required: true
+          type: string
+      responses:
+        200:
+          description: A user representation
+          schema:
+            $ref: '#/definitions/UserResponse'
+  /bugs/{bugId}.json:
+    get:
+      summary: Bug
+      description: |
+        A bug represents a unit of work that needs to be performed by a user.
+      parameters:
+        - name: bugId
+          in: path
+          description: Bug identifier
+          required: true
+          type: string
+      responses:
+        200:
+          description: A bug representation
+          schema:
+            $ref: '#/definitions/BugResponse'
+  /bugs.json:
+    post:
+      summary: Create new bug
+      description: Creates a new bug and assigns the identifier
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: bug
+          in: body
+          description: The bug
+          schema:
+            $ref: '#/definitions/Bug'
+          required: true
+      responses:
+        200:
+          description: A posted bug
+          schema:
+            $ref: '#/definitions/BugResponse'
+definitions:
+  IndexResponseUserDetail:
+    type: object
+    properties:
+      self: 
+        type: string
+      username:
+        type: string
+  IndexResponseBugDetail:
+    type: object
+    properties:
+      self:
+        type: string
+      title: 
+        type: string
+      status: 
+        type: string
+      description: 
+        type: string
+      assignedTo:
+        type: array
+        items:
+          $ref: '#/definitions/IndexResponseUserDetail'
+      watchedBy:
+        type: array
+        items:
+          $ref: '#/definitions/IndexResponseUserDetail'
+  IndexResponse: 
+    type: object
+    properties:
+      backlog:
+        type: array
+        description: Set of bugs in the backlog state
+        items:
+          $ref: '#/definitions/IndexResponseBugDetail'
+      inProgress:
+        type: array
+        description: Set of bugs that are currently being worked on
+        items:
+          $ref: '#/definitions/IndexResponseBugDetail'
+  UserResponse:
+    type: object
+    properties: 
+      username: 
+        type: string
+      email: 
+        type: string
+      assignments:
+        type: array
+        items:
+          type: string
+  Bug:
+    type: object
+    properties: 
+      title:
+        type: string
+      description:
+        type: string
+      assignedTo:
+        type: array
+        items:
+          type: string
+      watchedBy:
+        type: array
+        items:
+          type: string
+  BugResponse:
+    $ref: '#/definitions/Bug'

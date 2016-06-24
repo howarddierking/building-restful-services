@@ -1,0 +1,96 @@
+{
+  "_links": {
+      "self": { "href": "/resources/index.hal-json" }
+    },
+  "_embedded": {
+    "backlog": [
+      {
+        "_links": {
+          "self": { "href": "/resources/bugs/123.hal-json" }
+        },
+        "_embedded": {
+          "assignedTo": [
+            {
+              "_links": {
+                "self": {"href": "/resources/users/howard.hal-json" }
+              },
+              "username": "howard"
+            },
+            {
+              "_links": {
+                "self": {"href": "/resources/users/jessica.hal-json" }
+              },
+              "username": "jessica"
+
+            }
+          ],
+          "watchedBy": [
+            {
+              "_links": {
+                "self": {"href": "/resources/users/nick.hal-json" }
+              },
+              "username": "nick"
+            }
+          ]
+        },
+        "title": "bug 123",
+        "status": "Backlog",
+        "description": "this is an example of a bug"
+      }
+    ],
+    "inProgress": [
+      {
+        "_links": {
+          "self": { "href": "/resources/bugs/456.hal-json" }
+        },
+        "_embedded": {
+          "assignedTo": [
+            {
+              "_links": {
+                "self": {"href" : "/resources/users/jessica.hal-json" }
+              },
+              "username": "jessica"
+            }
+          ],
+          "watchedBy": [
+            {
+              "_links": {
+                "self": {"href": "/resources/users/nick.hal-json" }
+              },
+              "username": "nick"
+            }
+          ]
+        },
+        "title": "bug 456",
+        "status": "In Progress",
+        "description": "this is another example of a bug"
+      },
+      {
+        "_links": {
+          "self": { "href": "/resources/bugs/789.hal-json" }
+        },
+        "_embedded": {
+          "assignedTo": [
+            {
+              "_links": {
+                "self": { "href": "/resources/users/jessica.hal-json" }
+              },
+              "username": "jessica"
+            }
+          ],
+          "watchedBy": [
+            {
+              "_links": {
+                "self": { "href": "/resources/users/howard.hal-json" }
+              },
+              "username": "howard"
+            }
+          ]
+        },
+        "title": "bug 789",
+        "status": "In Progress",
+        "description": "this is yet another example of a bug"
+      }
+    ]
+  }
+}

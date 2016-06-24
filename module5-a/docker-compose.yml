@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+      image: nginx
+      volumes:
+        - ./demo.conf:/etc/nginx/nginx.conf:ro
+        - .:/website:ro
+      ports:
+        - "80:80"
