@@ -20,8 +20,8 @@
       let container = $('#user');
       let userUrl = location.hash.slice(1);
 
-      getResource(userUrl, function(user){
-        container.append(renderUser(user));
+      displayUserDetail(userUrl, function(err, results){
+        container.append(results);
       });
     });
     </script>
