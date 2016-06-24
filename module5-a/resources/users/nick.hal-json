@@ -1,0 +1,11 @@
+{
+  "_links": {
+    "self": { "href": "/resources/users/nick.hal-json" },
+    "watching": [
+      { "href": "/resources/bugs/123.hal-json" },
+      { "href": "/resources/bugs/456.hal-json" }
+    ]
+  },
+  "username": "nick",
+  "email": "nick@demo.org"
+}

@@ -1,0 +1,15 @@
+{
+  "_links": {
+    "self": { "href": "/resources/bugs/123.hal-json" },
+    "assignedTo": [
+      { "href": "/resources/users/howard.hal-json" },
+      { "href": "/resources/users/jessica.hal-json" }
+    ],
+    "watchedBy": [
+      {"href": "/resources/users/nick.hal-json" }
+    ]
+  },
+  "title": "bug 123",
+  "status": "Backlog",
+  "description": "this is an example of a bug"
+}

@@ -10,7 +10,7 @@ schemes:
   - http
   - https
 # will be prefixed to all paths
-basePath: /json
+basePath: /resources
 produces:
   - application/json
 paths:
@@ -57,15 +57,66 @@ paths:
           description: A bug representation
           schema:
             $ref: '#/definitions/BugResponse'
+  /bugs.json:
+    post:
+      summary: Create new bug
+      description: Creates a new bug and assigns the identifier
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: bug
+          in: body
+          description: The bug
+          schema:
+            $ref: '#/definitions/Bug'
+          required: true
+      responses:
+        200:
+          description: A posted bug
+          schema:
+            $ref: '#/definitions/BugResponse'
 definitions:
+  IndexResponseUserDetail:
+    type: object
+    properties:
+      self: 
+        type: string
+      username:
+        type: string
+  IndexResponseBugDetail:
+    type: object
+    properties:
+      self:
+        type: string
+      title: 
+        type: string
+      status: 
+        type: string
+      description: 
+        type: string
+      assignedTo:
+        type: array
+        items:
+          $ref: '#/definitions/IndexResponseUserDetail'
+      watchedBy:
+        type: array
+        items:
+          $ref: '#/definitions/IndexResponseUserDetail'
   IndexResponse: 
     type: object
     properties:
-      bugs:
+      backlog:
         type: array
-        description: Set of bug URLs
+        description: Set of bugs in the backlog state
         items:
-          type: string
+          $ref: '#/definitions/IndexResponseBugDetail'
+      inProgress:
+        type: array
+        description: Set of bugs that are currently being worked on
+        items:
+          $ref: '#/definitions/IndexResponseBugDetail'
   UserResponse:
     type: object
     properties: 
@@ -77,7 +128,7 @@ definitions:
         type: array
         items:
           type: string
-  BugResponse:
+  Bug:
     type: object
     properties: 
       title:
@@ -92,3 +143,5 @@ definitions:
         type: array
         items:
           type: string
+  BugResponse:
+    $ref: '#/definitions/Bug'

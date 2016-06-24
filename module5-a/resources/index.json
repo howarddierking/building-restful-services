@@ -1,0 +1,64 @@
+{
+  "backlog": [
+    {
+      "self": "/resources/bugs/123.json",
+      "title": "bug 123",
+      "status": "Backlog",
+      "description": "this is an example of a bug",
+      "assignedTo": [
+        {
+          "self": "/resources/users/howard.json",
+          "username": "howard"
+        },
+        {
+          "self": "/resources/users/jessica.json",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "self": "/resources/users/nick.json",
+          "username": "nick"
+        }
+      ]
+    }
+  ],
+  "inProgress": [
+    {
+      "self": "/resources/bugs/456.json",
+      "title": "bug 456",
+      "status": "In Progress",
+      "description": "this is another example of a bug",
+      "assignedTo": [
+        {
+          "self": "/resources/users/jessica.json",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "self": "/resources/users/nick.json",
+          "username": "nick"
+        }
+      ]
+    },
+    {
+      "self": "/resources/bugs/789.json",  
+      "title": "bug 789",
+      "status": "In Progress",
+      "description": "this is yet another example of a bug",
+      "assignedTo": [
+        {
+          "self": "/resources/users/jessica.json",
+          "username": "jessica"
+        }
+      ],
+      "watchedBy": [
+        {
+          "self": "/resources/users/howard.json",
+          "username": "howard"
+        }
+      ]
+    }
+  ]
+}

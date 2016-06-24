@@ -1,0 +1,10 @@
+{
+  "_links": {
+    "self": { "href": "/resources/users/howard.hal-json" },
+    "assignments": [
+      { "href": "/resources/bugs/123.hal-json" }
+    ]
+  },
+  "username": "howard",
+  "email": "howard@demo.org"  
+}
