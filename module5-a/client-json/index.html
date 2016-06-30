@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Building Restful Services</title>
-    
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./site.css">
+<head>
+  <meta charset="utf-8">
+  <title>Building Restful Services</title>
 
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bower_components/underscore/underscore-min.js"></script>
-    <script src="/bower_components/async/dist/async.min.js"></script>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./site.css">
 
-    <!-- Custom JS -->
-    <script src="./render.js" charset="utf-8"></script>
-    
-    <script>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/bower_components/underscore/underscore-min.js"></script>
+  <script src="/bower_components/async/dist/async.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="./render.js" charset="utf-8"></script>
+
+  <script>
     let bugsIndex = '/resources/index';
     
     $(document).ready(function() {
@@ -25,15 +25,40 @@
         container.append(_.map(pipelines, renderPipeline).join(''));
       });
     });
-    </script>
-  </head>
+  </script>
+</head>
 
-  <body>
-    <div class="container">
-      <h1><a href="./index.html">RESTbugs</a></h1>
-      <div id="pipelines" class="row">
-        <!-- pipelines -->
+<body>
+  <div class="container">
+    <h1>
+      <a href="./index.html">RESTbugs</a>
+      <button type="button" class="btn btn-info bug-btn" data-toggle="modal" data-target="#myModal">Create new bug</button>
+    </h1>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Create Bug</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+
+    <div id="pipelines" class="row">
+      <!-- pipelines -->
+    </div>
+  </div>
+</body>
 </html>
