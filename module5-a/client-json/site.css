@@ -2,6 +2,14 @@
   min-height: 600px;
 }
 
+.bug-btn {
+  background-color: #F5F5F5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right:10px;
+  color: black;
+}
+
 .bug-column {
   min-height: inherit;
   background-color: #F5F5F5;

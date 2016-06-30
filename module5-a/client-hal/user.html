@@ -26,8 +26,10 @@
       let container = $('#user');
       let userID = location.hash.slice(1);
       let user = new Hyperagent.Resource(userID);
-
-      renderUser(user).then(function(m){ container.append(m) });
+      
+      user.fetch().then(function(userResource){
+        container.append(renderUser(userResource));
+      });
     });
     </script>
   </head>

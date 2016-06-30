@@ -11,6 +11,13 @@ let renderBugUser = function(roleStatement, user){
     </a></p>`;
 };
 
+let renderUser = function(user){
+  return `<li class="list-group-item">
+    <h4>${user.props.username}</h4>
+    <h5>${user.props.email}</h5>
+  </li>`;
+};
+
 let renderBug = function(bug){
   return `<li class="list-group-item">
       <h4><a class="bug-title" href="${websiteRoot}/bug.html#${encodeURI(bug.links.self.href)}">

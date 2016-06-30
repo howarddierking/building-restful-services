@@ -3,10 +3,19 @@
   "status": "Backlog",
   "description": "this is an example of a bug",
   "assignedTo": [
-    "/resources/users/howard.json",
-    "/resources/users/jessica.json"
+    {
+      "self": "/resources/users/howard.json",
+      "username": "howard"
+    },
+    {
+      "self": "/resources/users/jessica.json",
+      "username": "jessica"
+    }
   ],
   "watchedBy": [
-    "/resources/users/nick.json"
+    {
+      "self": "/resources/users/nick.json",
+      "username": "nick"
+    }
   ]
 }

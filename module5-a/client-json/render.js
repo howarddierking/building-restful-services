@@ -14,6 +14,13 @@ let capitalize = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
+let renderUser = function(user){
+  return `<li class="list-group-item">
+    <h4>${user.username}</h4>
+    <h5>${user.email}</h5>
+  </li>`;
+};
+
 let renderBugUser = function(roleStatement, user){
   return `<p>${roleStatement}: 
     <a href="${websiteRoot}/user.html#${encodeURI(user.self)}" class="${roleStatement.toLowerCase().replace(' ', '-')}">

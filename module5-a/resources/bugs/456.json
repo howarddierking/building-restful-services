@@ -3,9 +3,15 @@
   "status": "In Progress",
   "description": "this is another example of a bug",
   "assignedTo": [
-    "/resources/users/jessica.json"
+    {
+      "self": "/resources/users/jessica.json",
+      "username": "jessica"
+    }
   ],
   "watchedBy": [
-    "/resources/users/nick.json"
+    {
+      "self": "/resources/users/nick.json",
+      "username": "nick"
+    }
   ]
 }

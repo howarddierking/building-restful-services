@@ -20,8 +20,8 @@
       let container = $('#bug');
       let bugID = location.hash.slice(1);
 
-      displayBug(bugID, function(err, results){
-        container.append(results);
+      getResource(bugID, function(bug){
+        container.append(renderBug(bug));
       });
     });
     </script>

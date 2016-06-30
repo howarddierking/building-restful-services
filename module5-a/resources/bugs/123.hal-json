@@ -1,12 +1,29 @@
 {
   "_links": {
-    "self": { "href": "/resources/bugs/123.hal-json" },
+    "self": { "href": "/resources/bugs/123.hal-json" }
+  },
+  "_embedded": {
     "assignedTo": [
-      { "href": "/resources/users/howard.hal-json" },
-      { "href": "/resources/users/jessica.hal-json" }
+      {
+        "_links": {
+          "self": {"href": "/resources/users/howard.hal-json" }
+        },
+        "username": "howard"
+      },
+      {
+        "_links": {
+          "self": {"href": "/resources/users/jessica.hal-json" }
+        },
+        "username": "jessica"
+      }
     ],
     "watchedBy": [
-      {"href": "/resources/users/nick.hal-json" }
+      {
+        "_links": {
+          "self": {"href": "/resources/users/nick.hal-json" }
+        },
+        "username": "nick"
+      }
     ]
   },
   "title": "bug 123",

@@ -11,13 +11,15 @@
   "assignedTo": [
     {
       "@id": "/resources/users/jessica.ld-json",
-      "@type": "User"
+      "@type": "User",
+      "username": "jessica"
     }
   ],
   "watchedBy": [
     {
       "@id": "/resources/users/nick.ld-json",
-      "@type": "User"
+      "@type": "User",
+      "username": "nick"
     }
   ]
 }

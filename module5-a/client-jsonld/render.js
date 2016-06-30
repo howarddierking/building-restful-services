@@ -27,9 +27,16 @@ let getPipelines = function(url, callback){
   });
 };
 
+let renderUser = function(user){
+  return `<li class="list-group-item">
+    <h4>${user.username}</h4>
+    <h5>${user.email}</h5>
+  </li>`;
+};
+
 let renderBugUser = function(roleStatement, user){
   return `<p>${roleStatement}: 
-  <a href="${websiteRoot}/user.html#'${encodeURI(extractID(user))}" class="${roleStatement.toLowerCase().replace(' ', '-')}">
+  <a href="${websiteRoot}/user.html#${encodeURI(extractID(user))}" class="${roleStatement.toLowerCase().replace(' ', '-')}">
     ${capitalize(user.username)}
   </a></p>`;
 };
