@@ -27,7 +27,9 @@
       let bugID = location.hash.slice(1);
       let bug = new Hyperagent.Resource(bugID);
 
-      renderBug(bug).then(function(m){ container.append(m) });
+      bug.fetch().then(function(bugResource){
+        container.append(renderBug(bugResource));
+      });
     });
     </script>
   </head>
