@@ -1,0 +1,21 @@
+{
+  "title": "bug 123",
+  "status": "Backlog",
+  "description": "this is an example of a bug",
+  "assignedTo": [
+    { 
+      "self": "/resources/users/howard.swfr.json", 
+      "id": "howard"
+    },
+    { 
+      "self": "/resources/users/jessica.swfr.json", 
+      "id": "jessica"
+    }
+  ],
+  "watchedBy": [
+    { 
+      "self": "/resources/users/nick.swfr.json",
+      "id": "nick"
+    }
+  ]
+}

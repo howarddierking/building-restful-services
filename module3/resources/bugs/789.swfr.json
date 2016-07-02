@@ -1,0 +1,17 @@
+{
+  "title": "bug 789",
+  "status": "In Progress",
+  "description": "this is yet another example of a bug",
+  "assignedTo": [
+    { 
+      "self": "/resources/users/jessica.swfr.json",
+      "id": "jessica" 
+    }
+  ],
+  "watchedBy": [
+    { 
+      "self": "/resources/users/howard.swfr.json",
+      "id": "howard"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "username": "howard",
+  "email": "howard@demo.org",
+  "assignments": [
+    {
+      "self": "/resources/bugs/123.swfr.json",
+      "id": "123"
+    }
+  ]
+}

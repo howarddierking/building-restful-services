@@ -1,0 +1,14 @@
+{
+  "username": "nick",
+  "email": "nick@demo.org",
+  "watching": [
+    {
+      "self": "/resources/bugs/123.swfr.json", 
+      "id": "123"
+    },
+    {
+      "self": "/resources/bugs/456.swfr.json", 
+      "id": "456"
+    }
+  ]
+}

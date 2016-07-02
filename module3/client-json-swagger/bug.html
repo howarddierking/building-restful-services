@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Building Restful Services</title>
+    
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./site.css">
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/underscore/underscore-min.js"></script>
+    <script src="/bower_components/async/dist/async.min.js"></script>
+    <script src="/bower_components/q/q.js"></script>
+    <script src="/bower_components/swagger-js/browser/swagger-client.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./render.js" charset="utf-8"></script>
+
+    <script>
+    $(document).ready(function() {
+        let container = $('#bug');
+        let bugID = location.hash.slice(1);
+
+      new SwaggerClient({
+        url: 'http://localhost/json.swagger.yml',
+        usePromise: true })
+      .then(function(c){
+        client = c;
+        return renderBug({ id: bugID, self: '#broken' });
+      })
+      .then(function(markup){
+        container.append(markup);
+      });
+    });
+    </script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="./index.html">RESTbugs</a></h1>
+      <div id="bug" class="row">
+        <!-- bug -->
+      </div>
+    </div>
+  </body>
+</html>
