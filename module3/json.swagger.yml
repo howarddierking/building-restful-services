@@ -4,17 +4,17 @@ info:
   description: Sample bug management API
   version: "1.0.0"
 # the domain of the service
-host: m2.build-rest.net
+host: localhost
 # array of all schemes that your API supports
 schemes:
   - http
   - https
 # will be prefixed to all paths
-basePath: /json
+basePath: /resources
 produces:
   - application/json
 paths:
-  /index.json:
+  /index.swfr.json:
     get:
       summary: API Dashboard
       description: |
@@ -24,7 +24,7 @@ paths:
           description: An object representing the dashboard resource
           schema:
             $ref: '#/definitions/IndexResponse'
-  /users/{userId}.json:
+  /users/{userId}.swfr.json:
     get:
       summary: User
       description: |
@@ -41,7 +41,7 @@ paths:
           description: A user representation
           schema:
             $ref: '#/definitions/UserResponse'
-  /bugs/{bugId}.json:
+  /bugs/{bugId}.swfr.json:
     get:
       summary: Bug
       description: |
